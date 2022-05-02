@@ -1,4 +1,3 @@
-const ReactRefreshTypeScript = require('react-refresh-typescript')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -7,13 +6,6 @@ const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlug
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
-
-const styledComponentsOptions = {
-  displayName: true,
-  fileName: false,
-  namespace: process.env.NAME_APPLICATTION,
-  sourceMap: true
-}
 
 module.exports = env => ({
   mode: env.mode,
@@ -50,37 +42,39 @@ module.exports = env => ({
   module: {
     rules: [
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: ['source-map-loader']
-      },
-      {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: ['@babel/preset-react', '@babel/preset-typescript'],
-          plugins: [['babel-plugin-styled-components', styledComponentsOptions]]
+          plugins: [['babel-plugin-styled-components', { pure: true }]]
         }
       },
       {
-        test: /\.tsx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
-        loader: 'ts-loader',
-        options: {
-          getCustomTransformers: () => ({
-            before: [isDevelopment && ReactRefreshTypeScript()].filter(Boolean)
-          }),
-          transpileOnly: isDevelopment
+        use: {
+          loader: 'swc-loader',
+          options: {
+            parseMap: true,
+            jsc: {
+              parser: { syntax: 'typescript' },
+              target: 'es2022',
+              minify: { compress: isProduction },
+              transform: {
+                react: {
+                  runtime: 'automatic',
+                  development: isDevelopment,
+                  refresh: isDevelopment
+                }
+              }
+            },
+            minify: true
+          }
         }
       },
       {
         test: /\.svg$/,
-        use: [
-          {
-            loader: '@svgr/webpack'
-          }
-        ]
+        use: [{ loader: '@svgr/webpack' }]
       },
       {
         test: /\.(png|svg|jpg|gif)$/i,
@@ -95,7 +89,7 @@ module.exports = env => ({
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.png',
+      favicon: './public/favicon.icon',
       minify: isProduction,
       cache: true
     }),
