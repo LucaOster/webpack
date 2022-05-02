@@ -89,7 +89,7 @@ module.exports = env => ({
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/favicon.icon',
+      favicon: './public/favicon.png',
       minify: isProduction,
       cache: true
     }),
