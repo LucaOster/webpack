@@ -1,0 +1,85 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "extends": [
+    "standard",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "react-hooks",
+    "@typescript-eslint",
+    "prettier",
+    "jsx-a11y",
+    "eslint-plugin-import-helpers"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint-in-jsx-scope": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "space-before-function-paren": "off",
+    "eslint-disable-next-line": "off",
+    "react/display-name": "off",
+    "prettier/prettier": "error",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "never",
+        "groups": [
+          "/^react/",
+          "module",
+          ["parent", "sibling", "index"],
+          "/^./styles/",
+          "/^./types/",
+          "/^components/",
+          "/^__mocks__/",
+          "/^./__mocks__/",
+          "/^../__mocks__/",
+          "/^mocks/"
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.stories.@(tsx|mdx|js|jsx|mjs|cjs)"],
+      "rules": {
+        "storybook/hierarchy-separator": "error"
+      }
+    }
+  ]
+}

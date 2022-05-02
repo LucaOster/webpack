@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Error } from '..'
+import * as stories from './stories'
+
+<Meta
+  title="Templates/Error"
+  component={Error}
+  parameters={{
+    controls: { sort: 'requiredFirst' }
+  }}
+/>
+
+# Example
+
+This Template is used when an error occurs.
+
+<Canvas>
+  <Story story={stories.Default} />
+</Canvas>

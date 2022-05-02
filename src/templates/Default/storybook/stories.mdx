@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Default } from '..'
+import * as stories from './stories'
+
+<Meta
+  title="Templates/Default"
+  component={Default}
+  parameters={{
+    controls: { sort: 'requiredFirst' }
+  }}
+/>
+
+# Default
+
+This Default Template is used automatically when exporting the page without defining a specific Template.
+
+<Canvas>
+  <Story story={stories.Default} />
+</Canvas>
