@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "outDir": "build/dist",
     "target": "ES2021",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+//    "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsxImportSource": "react",
     "removeComments": true,
-    "outDir": "build/dist",
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react-jsx",
@@ -25,6 +25,6 @@
     "declaration": true,
     "skipLibCheck": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["src/types/styledComponents.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist", "./.storybook"]
 }
