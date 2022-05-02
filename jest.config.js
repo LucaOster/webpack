@@ -1,5 +1,5 @@
 module.exports = {
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   collectCoverage: true,
   testPathIgnorePatterns: ['/node_modules'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
@@ -34,6 +34,9 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
   transform: {
-    '^.+\\.[jt]sx?$': 'ts-jest'
+    '^.+\\.tsx?$': [
+      '@swc/jest',
+      { jsc: { transform: { react: { runtime: 'automatic' } } } }
+    ]
   }
 }
