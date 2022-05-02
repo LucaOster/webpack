@@ -67,7 +67,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 🗂 Redux Toolkit and Redux-Persist
 
-🚩 Lints: ESlint, Prettier, EditorConfig, Commitlint and Typecheck
+🚩 Lints: ESlint, Stylelint, Prettier, EditorConfig, Commitlint and Typecheck
 
 ✅ Jest 
 
@@ -187,6 +187,10 @@ yarn build-sb
 
 ```bash
 yarn lint
+```
+
+```bash
+yarn lint:css
 ```
 
 ```bash
