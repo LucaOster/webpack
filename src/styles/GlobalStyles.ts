@@ -21,15 +21,21 @@ export default createGlobalStyle`
   body,
   html,
   #root {
-      background-color: ${T.colors.secondary};
-      color: ${T.colors.black};
+    background-color: ${T.colors.secondary};
+    color: ${T.colors.black};
   }
 
-  #root, body, input, select, textarea, button {
-      font: ${T.fonts.normal} ${T.fonts.sizes.medium} 'Inter', sans-serif;
+  #root,
+  body,
+  input,
+  select,
+  textarea,
+  button {
+    font: ${T.fonts.normal} ${T.fonts.sizes.medium} Inter, sans-serif;
   }
 
   button {
+    cursor: pointer;
     border: none;
     border-radius: ${T.border.radius};
   }
@@ -45,10 +51,6 @@ export default createGlobalStyle`
   a:active {
     color: inherit;
     text-decoration: none;
-  }
-
-  button {
-    cursor: pointer;
   }
 
   ::-webkit-scrollbar,

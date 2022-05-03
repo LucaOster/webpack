@@ -8,7 +8,6 @@ export const TitleSection = styled.h1`
   justify-content: center;
   padding: 0 2rem;
   margin: 20px 0;
-
   opacity: 0;
   animation: ${T.animations.fadeInMove('0', '-40px', '0')} 0.6s ease forwards;
   font-size: ${T.fonts.sizes.xLarge};

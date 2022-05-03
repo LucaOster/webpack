@@ -3,21 +3,21 @@ import T from 'theme'
 
 export const Wrapper = styled.div``
 
-export const TitleAnimation = styled.h1<{ isVisible: boolean }>`
-  ${({ isVisible }) =>
-    isVisible
-      ? css`
-          visibility: visible;
-          opacity: 1;
-          transform: scale(1);
-        `
-      : css`
-          visibility: hidden;
-          opacity: 0.6;
-          transform: scale(0.3);
-        `}
+const titleVisible = css`
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+`
 
-  transition: all 1s cubic-bezier(.4,0,.2,1);
+const titleHidden = css`
+  visibility: hidden;
+  opacity: 0.6;
+  transform: scale(0.3);
+`
+
+export const TitleAnimation = styled.h1<{ isVisible: boolean }>`
+  ${({ isVisible }) => (isVisible ? titleVisible : titleHidden)}
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 `
 
 export const Column = styled.div`

@@ -28,7 +28,6 @@ export const animations = {
     to {
       background-color: #000000b3;
       backdrop-filter: blur(0.7rem);
-      -webkit-backdrop-filter: blur(0.7rem);
     }
   `
 }
