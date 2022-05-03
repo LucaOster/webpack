@@ -10,7 +10,7 @@ const isProduction = process.env.ENVIRONMENT === 'PRD'
 module.exports = env => ({
   mode: env.mode,
   entry: './src/index',
-  devtool: 'source-map',
+  // devtool: 'source-map',
   output: {
     clean: true,
     publicPath: env.publicPath,
@@ -20,9 +20,13 @@ module.exports = env => ({
     chunkIds: 'named',
     usedExports: true,
     runtimeChunk: 'single',
-    emitOnErrors: isDevelopment,
-    flagIncludedChunks: true,
-    innerGraph: true
+    splitChunks: {
+      chunks: 'all'
+    },
+    flagIncludedChunks: true
+  },
+  performance: {
+    hints: false
   },
   resolve: {
     modules: ['src', 'node_modules'],
@@ -50,12 +54,12 @@ module.exports = env => ({
         }
       },
       {
-        test: /\.[jt]sx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'swc-loader',
           options: {
-            parseMap: true,
+            // parseMap: true,
             jsc: {
               parser: { syntax: 'typescript' },
               target: 'es2022',
