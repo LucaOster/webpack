@@ -6,6 +6,7 @@
     "stylelint-config-standard"
   ],
   "rules": {
+    "selector-max-compound-selectors": 2,
     "no-empty-source": null,
     "keyframes-name-pattern": null,
     "rule-empty-line-before": null,
