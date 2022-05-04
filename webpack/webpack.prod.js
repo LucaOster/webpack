@@ -5,5 +5,5 @@ module.exports = common({
   mode: 'production',
   port: process.env.PORT,
   publicPath:
-    'https://react-webpack-styled-components-redux-tlk-boilerplate.vercel.app'
+    'https://react-webpack-styled-components-redux-tlk-boilerplate.vercel.app/'
 })
