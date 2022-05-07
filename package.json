@@ -26,9 +26,17 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint && yarn lint:css && yarn typecheck",
+      "pre-commit": "lint-staged",
       "pre-push": "yarn test --findRelatedTests -b && yarn build && yarn build-sb"
     }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint",
+      "yarn lint:css",
+      "yarn typecheck",
+      "yarn test --findRelatedTests -b"
+    ]
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
@@ -88,6 +96,7 @@
     "jest-environment-jsdom": "^28.0.2",
     "jest-styled-components": "^7.0.8",
     "jest-svg-transformer": "^1.0.0",
+    "lint-staged": "^12.4.1",
     "plop": "^3.0.5",
     "prettier": "^2.5.1",
     "react-refresh": "^0.13.0",
