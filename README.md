@@ -67,7 +67,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 🗂 Redux Toolkit and Redux-Persist
 
-🚩 Lints: ESlint, Stylelint, Prettier, EditorConfig, Commitlint and Typecheck
+🚩 Lints: ESlint, Stylelint, Commitlint, Lint-Staged, Prettier, EditorConfig and Typecheck
 
 ✅ Jest 
 
