@@ -27,15 +27,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn test --findRelatedTests -b && yarn build && yarn build-sb"
+      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-sb"
     }
   },
   "lint-staged": {
     "src/**/*": [
       "yarn lint",
-      "yarn lint:css",
-      "yarn typecheck",
-      "yarn test --findRelatedTests -b"
+      "yarn lint:css"
     ]
   },
   "dependencies": {
