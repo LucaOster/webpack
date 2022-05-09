@@ -10,7 +10,7 @@ const isProduction = process.env.ENVIRONMENT === 'PRD'
 module.exports = env => ({
   mode: env.mode,
   entry: './src/index',
-  // devtool: 'source-map',
+  devtool: 'source-map',
   output: {
     clean: true,
     publicPath: env.publicPath,
@@ -59,7 +59,7 @@ module.exports = env => ({
         use: {
           loader: 'swc-loader',
           options: {
-            // parseMap: true,
+            parseMap: true,
             jsc: {
               parser: { syntax: 'typescript' },
               target: 'es2022',

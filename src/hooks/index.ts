@@ -1,2 +1,3 @@
-export { useAnimationRender } from './useAnimationRender'
-export { useRenderingByWindowSize } from './useRenderingByWindowSize'
+export * from './useAnimationRender'
+export * from './useSetPageTitle'
+export * from './useRenderingByWindowSize'

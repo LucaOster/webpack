@@ -1,10 +1,12 @@
 import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSetPageTitle } from 'hooks'
 import { useRepositoriesInTheGithub } from 'services'
 import * as S from './styles'
 import * as C from 'components'
 
 const PageExample3 = () => {
+  useSetPageTitle({ pageTitle: 'Page Example 3' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
   const { getRepositoriesGithub, repositoriesGithub } =
