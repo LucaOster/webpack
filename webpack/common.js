@@ -41,7 +41,8 @@ module.exports = env => ({
     port: env.port,
     historyApiFallback: true,
     hot: true,
-    open: true
+    open: true,
+    devMiddleware: { writeToDisk: true }
   },
   module: {
     rules: [
