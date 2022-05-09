@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom'
+import { useSetPageTitle } from 'hooks'
 import * as S from './styles'
 import * as C from 'components'
 
 const PageExample1 = () => {
+  useSetPageTitle({ pageTitle: 'Page Example 1' })
   const navigate = useNavigate()
 
   return (

@@ -1,10 +1,12 @@
 import { useNavigate } from 'react-router-dom'
+import { useSetPageTitle } from 'hooks'
 import { useExampleSimple } from 'store/exampleSimple'
 import { useExampleWithPayload } from 'store/exampleWithPayload'
 import * as S from './styles'
 import * as C from 'components'
 
 const Home = () => {
+  useSetPageTitle({ pageTitle: 'Boilerplate React' })
   const { exampleSimple, setChangeExample } = useExampleSimple()
   const { exampleWithPayload, setAddText, setRemoveText } =
     useExampleWithPayload()

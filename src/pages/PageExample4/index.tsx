@@ -1,10 +1,12 @@
 import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSetPageTitle } from 'hooks'
 import { useRepositoriesWithDispatch } from 'services'
 import * as S from './styles'
 import * as C from 'components'
 
 const PageExample4 = () => {
+  useSetPageTitle({ pageTitle: 'Page Example 4' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
   const { getFetchRepositories, exampleAsyncSlice } =

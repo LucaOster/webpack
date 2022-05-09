@@ -1,10 +1,12 @@
 import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useSetPageTitle } from 'hooks'
 import { useExampleAsyncThunk } from 'store/exampleAsyncThunk'
 import * as S from './styles'
 import * as C from 'components'
 
 const PageExample5 = () => {
+  useSetPageTitle({ pageTitle: 'Page Example 5' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
   const { exampleAsyncThunk, setFetchRepositories } = useExampleAsyncThunk()
