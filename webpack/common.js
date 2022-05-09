@@ -30,7 +30,7 @@ module.exports = env => ({
   },
   resolve: {
     modules: ['src', 'node_modules'],
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js']
   },
   devServer: {
     headers: {
@@ -81,7 +81,7 @@ module.exports = env => ({
         use: [{ loader: '@svgr/webpack' }]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/i,
+        test: /\.(png|svg|jpg)$/i,
         use: ['file-loader']
       }
     ]
