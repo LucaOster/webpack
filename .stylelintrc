@@ -3,7 +3,8 @@
   "extends": [
     "stylelint-config-recommended",
     "stylelint-config-styled-components",
-    "stylelint-config-standard"
+    "stylelint-config-standard",
+    "@stylelint/postcss-css-in-js"
   ],
   "rules": {
     "selector-max-compound-selectors": 2,
@@ -11,6 +12,11 @@
     "keyframes-name-pattern": null,
     "rule-empty-line-before": null,
     "declaration-colon-newline-after": null,
+    "selector-id-pattern": null,
     "value-keyword-case": null
-  }
+  },
+  "overrides": [{
+    "files": ["**/*.ts"],
+    "customSyntax": "@stylelint/postcss-css-in-js"
+  }]
 }
