@@ -88,7 +88,7 @@
     "eslint-plugin-react-hooks": "^2.3.0",
     "eslint-plugin-storybook": "^0.5.10",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^4.3.0",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
     "image-webpack-loader": "^7.0.1",
     "jest": "^28.0.3",
