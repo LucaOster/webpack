@@ -78,11 +78,12 @@ module.exports = env => ({
         }
       },
       {
-        test: /\.svg$/,
-        use: [{ loader: '@svgr/webpack' }]
+        test: /\.svg$/i,
+        issuer: /\.tsx?$/,
+        use: ['@svgr/webpack']
       },
       {
-        test: /\.(png|svg|jpg)$/i,
+        test: /\.(png|jpg|svg|gif)$/i,
         use: ['file-loader']
       }
     ]
