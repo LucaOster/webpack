@@ -6,7 +6,7 @@ module.exports = {
     'storybook-dark-mode/register',
     'storybook-mobile',
     '@storybook/addon-a11y',
-    'storybook-addon-next-router'
+    'storybook-addon-swc'
   ],
   core: {
     builder: 'webpack5'
@@ -20,9 +20,10 @@ module.exports = {
     <style>
       #root {
         display: grid !important;
-        place-items: center !important;
         height: 100% !important;
         width: 100% !important;
+        justify-content: center !important;
+        align-items: center;
       }
 
       @media screen and (min-width: 90rem) {
