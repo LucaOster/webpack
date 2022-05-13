@@ -36,8 +36,7 @@
     "react-hooks",
     "@typescript-eslint",
     "prettier",
-    "jsx-a11y",
-    "eslint-plugin-import-helpers"
+    "jsx-a11y"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
@@ -53,26 +52,7 @@
     "space-before-function-paren": "off",
     "eslint-disable-next-line": "off",
     "react/display-name": "off",
-    "prettier/prettier": "error",
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "never",
-        "groups": [
-          "/^react/",
-          "module",
-          ["parent", "sibling", "index"],
-          "/^./styles/",
-          "/^./types/",
-          "/^components/",
-          "/^__mocks__/",
-          "/^./__mocks__/",
-          "/^../__mocks__/",
-          "/^mocks/"
-        ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
-      }
-    ]
+    "prettier/prettier": "error"
   },
   "overrides": [
     {
