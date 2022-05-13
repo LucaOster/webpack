@@ -7,6 +7,14 @@ const HotModuleReplacementPlugin = require('webpack/lib/HotModuleReplacementPlug
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
 
+const styledComponentsOptions = {
+  displayName: true,
+  fileName: false,
+  namespace: process.env.NAME_APPLICATTION,
+  sourceMap: true,
+  pure: true
+}
+
 module.exports = env => ({
   mode: env.mode,
   entry: './src/index',
@@ -47,11 +55,16 @@ module.exports = env => ({
   module: {
     rules: [
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: ['source-map-loader']
+      },
+      {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          plugins: [['babel-plugin-styled-components', { pure: true }]]
+          plugins: [['babel-plugin-styled-components', styledComponentsOptions]]
         }
       },
       {
@@ -62,13 +75,12 @@ module.exports = env => ({
           options: {
             parseMap: true,
             jsc: {
-              parser: { syntax: 'typescript' },
+              parser: { syntax: 'typescript', tsx: true },
               target: 'es2022',
               minify: { compress: isProduction },
               transform: {
                 react: {
                   runtime: 'automatic',
-                  development: isDevelopment,
                   refresh: isDevelopment
                 }
               }
