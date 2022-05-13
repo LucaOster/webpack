@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { themes } from '@storybook/theming'
-import GlobalStyles from 'globalStyles'
+import { GlobalStyles } from 'globalStyles'
 import { store } from 'store/configStore'
 
 const customViewports = {
@@ -44,7 +44,7 @@ export const parameters = {
       appContentBg: '#000927',
       barBg: '#051542',
       appBg: '#051542',
-      brandTitle: 'Acessibilidade Web',
+      brandTitle: 'Boilerplate',
       brandUrl: '/',
       colorSecondary: '#1EA7FD',
       appBorderColor: '#ffffff26',
