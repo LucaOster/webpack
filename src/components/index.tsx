@@ -1,4 +1,3 @@
-export * from './atoms/Svg'
 export { default as Button } from './atoms/Button'
 export { default as TitleSection } from './atoms/TitleSection'
 export { default as ErrorBoundary } from './atoms/ErrorBoundary'
