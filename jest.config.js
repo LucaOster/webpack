@@ -11,7 +11,6 @@ module.exports = {
     'src/app.tsx',
     'src/pages/index.tsx',
     'src/components/index.tsx',
-    'src/components/atoms/Svg',
     'src/hooks/index.ts',
     'src/templates/index.ts',
     'src/utils/index.ts',
@@ -22,13 +21,16 @@ module.exports = {
     'src/services',
     'src/store',
     'src/theme',
-    'src/styles',
+    'src/globalStyles',
     'stories.tsx',
     'types.ts'
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
+  moduleNameMapper: {
+    '^.+\\.svg$': '<rootDir>/src/__mocks__/svg.ts'
+  },
   transform: {
     '^.+\\.tsx?$': [
       '@swc/jest',
