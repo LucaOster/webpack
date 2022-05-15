@@ -31,6 +31,8 @@ describe('[Component] TitleAnimation', () => {
 
     userEvent.click(button)
 
+    jest.advanceTimersByTime(200)
+
     expect(screen.getByRole('heading')).toBeInTheDocument()
 
     userEvent.click(button)
