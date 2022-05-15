@@ -20,6 +20,6 @@ describe('[Component] ErrorBoundary', () => {
       </ErrorBoundary>
     )
 
-    expect(screen.queryByText('Algo deu errado.')).toBeInTheDocument()
+    expect(screen.getByText('Algo deu errado.')).toBeInTheDocument()
   })
 })

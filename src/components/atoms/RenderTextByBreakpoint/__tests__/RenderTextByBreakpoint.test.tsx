@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react'
 import T from 'theme'
 import { renderWithProviders } from 'utils'
 import RenderTextByBreakpoint from '..'
-import { size } from '__mocks__'
+import { size } from 'mocks'
 
 describe('[Component] RenderTextByBreakpoint', () => {
   size(T.windowSizes.sm)

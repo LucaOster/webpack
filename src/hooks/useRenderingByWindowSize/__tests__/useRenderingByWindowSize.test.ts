@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks'
 import { useRenderingByWindowSize } from '..'
 import T from 'theme'
-import { size } from '__mocks__'
+import { size } from 'mocks'
 
 describe('[Hooks] useRenderingByWindowSize', () => {
   it('should return xs to screen size up until T.windowSizes.sm', () => {

@@ -31,7 +31,7 @@ describe('[Util] ErrorApi', () => {
     expect(connectionError).toEqual(ERROR_MESSAGE.GENERIC_ERROR)
   })
 
-  it('should return a generic error message for undefined error status return', () => {
+  it('should return a generic error message for generic error status return', () => {
     error.response.status = null as any
     const unknownError = errorApi(error)
     expect(unknownError).toEqual(ERROR_MESSAGE.GENERIC_ERROR)

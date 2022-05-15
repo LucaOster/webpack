@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import PageExample3 from '..'
-import { mockedUseNavigate } from '__mocks__'
-import * as mock from '../__mocks__/mockedUseRepositoriesInTheGithub'
+import { mockedUseNavigate } from 'mocks'
+import * as mock from '../mocks/mockedUseRepositoriesInTheGithub'
 
 let mockedUseRepositoriesInTheGithub = mock.useRepositoriesInTheGithub1
 
@@ -35,7 +35,7 @@ describe('[Page] PageExample3', () => {
     })
     fireEvent.click(btn)
 
-    expect(verifyCall).toBeCalledTimes(1)
+    expect(verifyCall).toHaveBeenCalledTimes(1)
     expect(repositoryListText1).toBeInTheDocument()
     expect(repositoryListText2).toBeInTheDocument()
   })
@@ -48,7 +48,7 @@ describe('[Page] PageExample3', () => {
     fireEvent.click(btn)
     fireEvent.mouseEnter(btn)
 
-    expect(mockedUseNavigate).toBeCalledTimes(1)
+    expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
     expect(mockedUseNavigate).toHaveBeenCalledWith('/')
   })
 
@@ -82,7 +82,7 @@ describe('[Page] PageExample3', () => {
     fireEvent.click(btn)
 
     expect(error).toBeInTheDocument()
-    expect(verifyCall).toBeCalledTimes(1)
+    expect(verifyCall).toHaveBeenCalledTimes(1)
     expect(repositoryListText1).not.toBeInTheDocument()
     expect(repositoryListText2).not.toBeInTheDocument()
   })
@@ -97,7 +97,7 @@ describe('[Page] PageExample3', () => {
 
     fireEvent.click(btn)
 
-    expect(verifyCall).toBeCalledTimes(0)
+    expect(verifyCall).toHaveBeenCalledTimes(0)
     expect(repositoryListText1).not.toBeInTheDocument()
     expect(repositoryListText2).not.toBeInTheDocument()
     expect(error).toBeInTheDocument()

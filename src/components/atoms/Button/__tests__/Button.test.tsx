@@ -1,5 +1,4 @@
-import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import Button from '..'
 
@@ -17,7 +16,7 @@ describe('[Component] Button', () => {
       backgroundColor: '#334BC8'
     })
 
-    expect(btn.closest('button')).not.toBeDisabled()
+    expect(btn).toBeEnabled()
     expect(container).toMatchSnapshot()
   })
 
@@ -48,7 +47,7 @@ describe('[Component] Button', () => {
       opacity: 0.5,
       backgroundColor: '#a1a4b0'
     })
-    expect(btn.closest('button')).toBeDisabled()
+    expect(btn).toBeDisabled()
   })
 
   it('should call a function once on click on the button', () => {
@@ -65,7 +64,7 @@ describe('[Component] Button', () => {
 
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
 
-    userEvent.click(btn)
+    fireEvent.click(btn)
 
     expect(onClick).toHaveBeenCalled()
     expect(onClick).toHaveBeenCalledTimes(1)
