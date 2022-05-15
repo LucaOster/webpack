@@ -21,7 +21,11 @@
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
-    "prettier"
+    "prettier",
+    "plugin:jest-dom/recommended",
+    "plugin:testing-library/react",
+    "plugin:jest/recommended",
+    "plugin:jest/style"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -35,8 +39,11 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
-    "prettier",
-    "jsx-a11y"
+    "jsx-a11y",
+    "jest-dom",
+    "testing-library",
+    "jest",
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
@@ -59,7 +66,18 @@
       "files": ["*.stories.@(tsx|mdx|js|jsx|mjs|cjs)"],
       "rules": {
         "storybook/hierarchy-separator": "error"
-      }
+      },
+      "extends": ["plugin:storybook/recommended"]
+    },
+    {
+      "files": ["**/__tests__/**/*.tsx?", "**/?(*.)+(spec|test).tsx?"],
+      "plugins": ["jest-dom", "testing-library", "jest"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react",
+        "plugin:jest/recommended",
+        "plugin:jest/style"
+      ]
     }
   ]
 }

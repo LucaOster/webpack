@@ -31,7 +31,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*": [
+    "*.{ts,tsx}": [
       "yarn lint",
       "yarn lint:css"
     ]
@@ -79,6 +79,8 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-import-resolver-typescript": "^2.7.1",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.1",
+    "eslint-plugin-jest-dom": "^4.0.1",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -86,6 +88,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.10",
+    "eslint-plugin-testing-library": "^5.5.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",

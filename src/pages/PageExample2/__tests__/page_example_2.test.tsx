@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import PageExample2 from '..'
-import { mockedUseNavigate } from '__mocks__'
+import { mockedUseNavigate } from 'mocks'
 
 describe('[Page] PageExample2', () => {
   it('should an Home page', () => {
@@ -17,7 +17,7 @@ describe('[Page] PageExample2', () => {
     fireEvent.click(btn)
     fireEvent.mouseEnter(btn)
 
-    expect(mockedUseNavigate).toBeCalledTimes(1)
+    expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
     expect(mockedUseNavigate).toHaveBeenCalledWith('/')
   })
 })

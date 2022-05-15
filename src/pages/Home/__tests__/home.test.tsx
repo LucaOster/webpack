@@ -1,7 +1,7 @@
 import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import Home from '..'
-import { mockedUseNavigate } from '__mocks__'
+import { mockedUseNavigate } from 'mocks'
 
 describe('[Page] Home', () => {
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('[Page] Home', () => {
 
   it('should an Home page', () => {
     const { container } = renderWithProviders(<Home />)
-    expect(container).toBeInTheDocument()
+    expect(container).toBeDefined()
   })
 
   it('should alternate the text displayed in two h1 each time the button is clicked', () => {
@@ -72,7 +72,7 @@ describe('[Page] Home', () => {
       fireEvent.click(btn)
       fireEvent.mouseEnter(btn)
 
-      expect(mockedUseNavigate).toBeCalledTimes(1)
+      expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
       expect(mockedUseNavigate).toHaveBeenCalledWith(
         `page-example-${buttonNumber}`
       )

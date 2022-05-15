@@ -25,6 +25,6 @@
     "declaration": true,
     "skipLibCheck": true
   },
-  "include": ["src/types/styledComponents.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "./.jest/setup.ts"],
   "exclude": ["node_modules", "dist", "./.storybook"]
 }
