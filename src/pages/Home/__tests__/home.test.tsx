@@ -1,4 +1,5 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'utils'
 import Home from '..'
 import { mockedUseNavigate } from 'mocks'
@@ -28,7 +29,7 @@ describe('[Page] Home', () => {
     expect(titleSectionStateExample1).toBeInTheDocument()
     expect(titleSectionPayload1).toBeInTheDocument()
 
-    fireEvent.click(btn)
+    userEvent.click(btn)
 
     const titleSectionStateExample2 = screen.getByRole('heading', {
       name: 'Redux Example State: true'
@@ -40,7 +41,7 @@ describe('[Page] Home', () => {
     expect(titleSectionStateExample2).toBeInTheDocument()
     expect(titleSectionPayload2).toBeInTheDocument()
 
-    fireEvent.click(btn)
+    userEvent.click(btn)
 
     const titleSectionStateExample3 = screen.getByRole('heading', {
       name: 'Redux Example State: false'
@@ -69,8 +70,8 @@ describe('[Page] Home', () => {
         name: `Page Example ${buttonNumber}`
       })
 
-      fireEvent.click(btn)
-      fireEvent.mouseEnter(btn)
+      userEvent.click(btn)
+      userEvent.hover(btn)
 
       expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
       expect(mockedUseNavigate).toHaveBeenCalledWith(

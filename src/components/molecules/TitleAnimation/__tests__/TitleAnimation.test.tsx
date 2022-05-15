@@ -1,4 +1,5 @@
-import { act, fireEvent, screen } from '@testing-library/react'
+import { act, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'utils'
 import TitleAnimation from '..'
 
@@ -28,11 +29,11 @@ describe('[Component] TitleAnimation', () => {
 
     expect(screen.queryByRole('heading')).not.toBeInTheDocument()
 
-    fireEvent.click(button)
+    userEvent.click(button)
 
     expect(screen.getByRole('heading')).toBeInTheDocument()
 
-    fireEvent.click(button)
+    userEvent.click(button)
 
     expect(screen.queryByRole('heading')).not.toBeInTheDocument()
   })
