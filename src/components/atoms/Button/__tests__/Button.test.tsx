@@ -13,8 +13,7 @@ describe('[Component] Button', () => {
     expect(btn).toHaveStyle({
       height: 'min-content',
       padding: '0.8rem 1.2rem',
-      fontSize: '1.2rem',
-      backgroundColor: '#334BC8'
+      fontSize: '1.2rem'
     })
 
     expect(btn).toBeEnabled()
@@ -31,8 +30,7 @@ describe('[Component] Button', () => {
     expect(btn).toHaveStyle({
       height: 'min-content',
       padding: '1.2rem 2.4rem',
-      fontSize: '1.4rem',
-      backgroundColor: '#334BC8'
+      fontSize: '1.4rem'
     })
   })
 
@@ -45,8 +43,7 @@ describe('[Component] Button', () => {
 
     expect(btn).toHaveStyle({
       cursor: 'not-allowed',
-      opacity: 0.5,
-      backgroundColor: '#a1a4b0'
+      opacity: 0.5
     })
     expect(btn).toBeDisabled()
   })
@@ -84,8 +81,6 @@ describe('[Component] Button', () => {
 
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
 
-    expect(btn).toHaveStyle({
-      width: '100%'
-    })
+    expect(btn).toHaveStyle({ width: '100%' })
   })
 })
