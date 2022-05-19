@@ -21,6 +21,7 @@ module.exports = {
     'src/services',
     'src/store',
     'src/theme',
+    'src/mocks/index',
     'src/globalStyles',
     'stories.tsx',
     'types.ts'
