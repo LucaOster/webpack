@@ -79,4 +79,35 @@ describe('[Page] Home', () => {
       )
     })
   })
+
+  it('should toggle the button text on click', () => {
+    renderWithProviders(<Home />)
+
+    const btnTheme = screen.getByRole('button', { name: /theme/i })
+
+    expect(btnTheme).toHaveTextContent('Theme dark')
+
+    userEvent.click(btnTheme)
+
+    expect(btnTheme).toHaveTextContent('Theme light')
+  })
+
+  it('should toggle the attribute theme value in the body when clicking the button', () => {
+    document.body.setAttribute('data-theme', 'light')
+    renderWithProviders(<Home />)
+
+    const btnTheme = screen.getByRole('button', { name: /theme/i })
+
+    expect(document.body.dataset.theme).toBe('dark')
+    expect(
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ).toBeFalsy()
+
+    userEvent.click(btnTheme)
+
+    expect(document.body.dataset.theme).toBe('light')
+    expect(
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ).toBeFalsy()
+  })
 })
