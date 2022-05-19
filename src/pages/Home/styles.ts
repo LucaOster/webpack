@@ -12,6 +12,10 @@ export const Container = styled.div`
     margin: 12rem auto;
     padding: 0 2rem;
   }
+
+  svg {
+    fill: ${T.colors.primaryHover};
+  }
 `
 
 export const BtnGroup = styled.div`
