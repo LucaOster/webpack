@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useSetPageTitle } from 'hooks'
+import { useSetPageTitle, useThemeDetect } from 'hooks'
 import { useExampleSimple } from 'store/exampleSimple'
 import { useExampleWithPayload } from 'store/exampleWithPayload'
 import * as S from './styles'
@@ -11,9 +11,10 @@ const Home = () => {
   const { exampleSimple, setChangeExample } = useExampleSimple()
   const { exampleWithPayload, setAddText, setRemoveText } =
     useExampleWithPayload()
+  const { setTheme, showThemeToSelect } = useThemeDetect()
   const navigate = useNavigate()
 
-  const handleChange = () => {
+  const handleChange = (): void => {
     setChangeExample()
 
     exampleWithPayload
@@ -101,6 +102,16 @@ const Home = () => {
           aria-label="Page Example 5"
           className="btn"
           onClick={() => navigate('page-example-5')}
+        />
+
+        <C.Button
+          fullWidth={true}
+          color="red"
+          size="large"
+          text={`Theme ${showThemeToSelect}`}
+          aria-label={`Theme ${showThemeToSelect}`}
+          className="btn"
+          onClick={setTheme}
         />
       </S.BtnGroup>
     </S.Container>
