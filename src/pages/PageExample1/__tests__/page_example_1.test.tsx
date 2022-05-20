@@ -5,11 +5,6 @@ import PageExample1 from '..'
 import { mockedUseNavigate } from 'mocks'
 
 describe('[Page] PageExample1', () => {
-  it('should an Home page', () => {
-    const { container } = renderWithProviders(<PageExample1 />)
-    expect(container).toBeInTheDocument()
-  })
-
   it('should go to another page by clicking the button', () => {
     renderWithProviders(<PageExample1 />)
 

@@ -15,7 +15,6 @@ describe('[Hooks] useAnimationRender', () => {
     const { result } = renderHook(() =>
       useAnimationRender({ timeMilSecToRemoveComponent: 1 })
     )
-
     expect(result.current.isRenderComponent).toBeFalsy()
     expect(result.current.isVisible).toBeFalsy()
   })
@@ -29,6 +28,7 @@ describe('[Hooks] useAnimationRender', () => {
     act(() => {
       result.current.changeStateComponent()
     })
+
     expect(result.current.isRenderComponent).toBeTruthy()
     expect(result.current.isVisible).toBeTruthy()
   })

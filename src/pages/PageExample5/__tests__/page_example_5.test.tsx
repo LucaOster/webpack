@@ -19,11 +19,6 @@ const verifyCall = jest.spyOn(
 describe('[Page] PageExample5', () => {
   afterEach(() => jest.clearAllMocks())
 
-  it('should an Home page', () => {
-    const { container } = renderWithProviders(<PageExample5 />)
-    expect(container).toBeInTheDocument()
-  })
-
   it('should render list of repositories when clicking "Search Repository" button if user in text field exists and if isLoading is false', () => {
     renderWithProviders(<PageExample5 />)
 

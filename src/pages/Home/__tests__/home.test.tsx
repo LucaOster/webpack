@@ -10,11 +10,6 @@ describe('[Page] Home', () => {
     mockedUseNavigate.mockClear()
   })
 
-  it('should an Home page', () => {
-    const { container } = renderWithProviders(<Home />)
-    expect(container).toBeDefined()
-  })
-
   it('should alternate the text displayed in two h1 each time the button is clicked', () => {
     renderWithProviders(<Home />)
 

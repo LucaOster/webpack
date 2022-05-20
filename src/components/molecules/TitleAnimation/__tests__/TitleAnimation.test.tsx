@@ -15,28 +15,33 @@ describe('[Component] TitleAnimation', () => {
     jest.useRealTimers()
   })
 
-  it('should render a button', () => {
-    renderWithProviders(<TitleAnimation />)
-
-    const button = screen.getByRole('button')
-    expect(button).toBeInTheDocument()
-  })
-
   it('should render a heading by clicking the button', () => {
     renderWithProviders(<TitleAnimation />)
 
     const button = screen.getByRole('button')
 
-    expect(screen.queryByRole('heading')).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', {
+        name: /animated text on assembly and disassembly/i
+      })
+    ).not.toBeInTheDocument()
 
     userEvent.click(button)
 
     jest.advanceTimersByTime(200)
 
-    expect(screen.getByRole('heading')).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: /animated text on assembly and disassembly/i
+      })
+    ).toBeInTheDocument()
 
     userEvent.click(button)
 
-    expect(screen.queryByRole('heading')).not.toBeInTheDocument()
+    expect(
+      screen.queryByRole('heading', {
+        name: /animated text on assembly and disassembly/i
+      })
+    ).not.toBeInTheDocument()
   })
 })
