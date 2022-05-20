@@ -16,6 +16,7 @@ describe('[Hooks] useThemeDetect', () => {
     act(() => {
       result.current.setTheme()
     })
+
     expect(result.current.showThemeToSelect).toBe('dark')
   })
 })

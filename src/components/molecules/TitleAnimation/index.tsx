@@ -7,7 +7,7 @@ const TitleAnimation = () => {
     useAnimationRender({ timeMilSecToRemoveComponent: 1000 })
 
   return (
-    <S.Wrapper>
+    <div>
       {isRenderComponent && (
         <S.TitleAnimation isVisible={isVisible}>
           Animated text on assembly and disassembly
@@ -25,7 +25,7 @@ const TitleAnimation = () => {
           aria-label="Assemble Animated Component"
         />
       </S.Column>
-    </S.Wrapper>
+    </div>
   )
 }
 

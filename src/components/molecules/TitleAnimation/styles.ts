@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components'
 import T from 'theme'
 
-export const Wrapper = styled.div``
-
 const titleVisible = css`
   visibility: visible;
   opacity: 1;
