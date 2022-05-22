@@ -1,1 +1,1 @@
-export * from 'store/exampleTheme/useExampleTheme'
+export * from './useExampleTheme'

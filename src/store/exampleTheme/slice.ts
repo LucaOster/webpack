@@ -2,24 +2,34 @@ import { createSlice } from '@reduxjs/toolkit'
 import { ExampleThemeType } from './types'
 
 const initialState: ExampleThemeType = {
-  isDark: false,
-  isPrefersColorScheme: true
+  isPrefersColorSchemeDark: false,
+  isPrefersColorScheme: true,
+  isDark: false
 }
 
 const exampleThemeSlice = createSlice({
   name: 'exampleTheme',
   initialState,
   reducers: {
+    setIsPrefersColorSchemeDark(state) {
+      const isClientBrowser = typeof window === 'object'
+      state.isPrefersColorSchemeDark =
+        isClientBrowser &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+    },
     setChangeTheme(state) {
       state.isDark = !state.isDark
     },
-    setPrefersColorScheme(state) {
+    setIsPrefersColorScheme(state) {
       state.isPrefersColorScheme = false
     }
   }
 })
 
-export const { setChangeTheme, setPrefersColorScheme } =
-  exampleThemeSlice.actions
+export const {
+  setIsPrefersColorSchemeDark,
+  setChangeTheme,
+  setIsPrefersColorScheme
+} = exampleThemeSlice.actions
 
 export const exampleTheme = exampleThemeSlice.reducer
