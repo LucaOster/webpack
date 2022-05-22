@@ -52,9 +52,7 @@ describe('[Page] Home', () => {
   const dataTests = [
     { buttonNumber: 1 },
     { buttonNumber: 2 },
-    { buttonNumber: 3 },
-    { buttonNumber: 4 },
-    { buttonNumber: 5 }
+    { buttonNumber: 3 }
   ]
 
   dataTests.forEach(({ buttonNumber }) => {

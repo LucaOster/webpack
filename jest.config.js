@@ -19,9 +19,10 @@ module.exports = {
     'src/libs',
     'src/router',
     'src/services',
+    'src/http',
     'src/store',
     'src/theme',
-    'src/mocks/index',
+    'src/mocks/index.ts',
     'src/globalStyles',
     'stories.tsx',
     'types.ts'

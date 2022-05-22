@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import T from 'theme'
-import { useWindowSizeType } from './types'
+import { UseWindowSizeType } from './types'
 
 export const getWindowSize = () => {
   const minWidth = (size: number) =>
@@ -13,7 +13,7 @@ export const getWindowSize = () => {
 }
 
 export const useRenderingByWindowSize = () => {
-  const [windowSize, setWindowSize] = useState<useWindowSizeType>(
+  const [windowSize, setWindowSize] = useState<UseWindowSizeType>(
     getWindowSize()
   )
 

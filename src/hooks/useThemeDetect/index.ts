@@ -1,19 +1,21 @@
-import { useLayoutEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import { useExampleTheme } from 'store/exampleTheme'
 
 export const useThemeDetect = () => {
   const {
-    isDarkMode,
+    isPrefersColorSchemeDark,
     isPrefersColorScheme,
+    isDarkMode,
+    setIsPrefersColorSchemeDark,
     setChangeTheme,
-    setPrefersColorScheme
+    setIsPrefersColorScheme
   } = useExampleTheme()
 
-  const isClientBrowser = typeof window !== 'undefined'
-  const isDark: boolean =
-    isClientBrowser && window.matchMedia('(prefers-color-scheme: dark)').matches
+  useEffect(() => {
+    isPrefersColorScheme && setIsPrefersColorSchemeDark()
+  }, [isPrefersColorScheme, setIsPrefersColorSchemeDark])
 
-  const prefersColorScheme = isDark ? 'dark' : 'light'
+  const prefersColorScheme = isPrefersColorSchemeDark ? 'dark' : 'light'
   const theme = isDarkMode ? 'dark' : 'light'
 
   const selectedTheme: string = isPrefersColorScheme
@@ -27,9 +29,9 @@ export const useThemeDetect = () => {
   }, [selectedTheme])
 
   const setTheme = () => {
-    setPrefersColorScheme()
+    setIsPrefersColorScheme()
 
-    if (isDark && isPrefersColorScheme) return
+    if (isPrefersColorSchemeDark && isPrefersColorScheme) return
 
     return setChangeTheme()
   }

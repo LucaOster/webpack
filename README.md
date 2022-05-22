@@ -13,22 +13,28 @@
 
 This application is a boilerplate for complex and large systems, especially those that need to scale with security and code quality.
 
+We sought to achieve 3 pillars: readability, reusability, and refactorability.
+
+For this purpose, logical hooks were used to decouple the Store Layer and the Services Layer. Thus, the UI only depends on the Hooks layer and never directly imports any state manager methods and any direct calls from the Services Layer.
+
+In the construction of the UI, the Atomic Design structure was chosen, organizing the global components into atoms, molecules and organisms. To create the page layouts, the idea of templates was used.
+
 In addition to being constantly updated, this project was configured in the smallest details to serve as a basis for professional projects that require standardized and easy-to-maintain code architecture and design.
 
 <br />
 
 <div align="center">
-  <img src="informations/design.svg" alt="Design">
-  
-  <br />
-  <br />
-  
   <img src="informations/simplifiedArchitecture.svg" alt="Simplified Architecture">
-  
+
   <br />
   <br />
   
   <img src="informations/architecture.svg" alt="Architecture">
+  
+  <br />
+  <br />
+
+  <img src="informations/design.svg" alt="Design">
 </div>
 
 ---

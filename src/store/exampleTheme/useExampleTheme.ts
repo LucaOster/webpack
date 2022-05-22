@@ -1,18 +1,28 @@
 import { useTypedDispatch, useTypedSelector } from '../useHelpers'
-import { setChangeTheme, setPrefersColorScheme } from './slice'
+import {
+  setChangeTheme,
+  setIsPrefersColorScheme,
+  setIsPrefersColorSchemeDark
+} from './slice'
 
 export const useExampleTheme = () => {
   const dispatch = useTypedDispatch()
 
-  const isDarkMode = useTypedSelector(state => state.exampleTheme.isDark)
-  const isPrefersColorScheme = useTypedSelector(
-    state => state.exampleTheme.isPrefersColorScheme
-  )
-
-  const setState = {
-    setChangeTheme: () => dispatch(setChangeTheme()),
-    setPrefersColorScheme: () => dispatch(setPrefersColorScheme())
+  const state = {
+    isPrefersColorSchemeDark: useTypedSelector(
+      state => state.exampleTheme.isPrefersColorSchemeDark
+    ),
+    isPrefersColorScheme: useTypedSelector(
+      state => state.exampleTheme.isPrefersColorScheme
+    ),
+    isDarkMode: useTypedSelector(state => state.exampleTheme.isDark)
   }
 
-  return { isDarkMode, isPrefersColorScheme, ...setState }
+  const setState = {
+    setIsPrefersColorSchemeDark: () => dispatch(setIsPrefersColorSchemeDark()),
+    setChangeTheme: () => dispatch(setChangeTheme()),
+    setIsPrefersColorScheme: () => dispatch(setIsPrefersColorScheme())
+  }
+
+  return { ...state, ...setState }
 }

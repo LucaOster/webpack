@@ -13,9 +13,7 @@ const RoutesWrapper = () => (
       <Route path="/" element={<Template.Example />}>
         <Route path="page-example-1" element={<Pages.PageExample1 />} />
         <Route path="page-example-2" element={<Pages.PageExample2 />} />
-        <Route path="page-example-3" element={<Pages.PageExample3 />} />
-        <Route path="page-example-4" element={<Pages.PageExample4 />} />
-        <Route path="page-example-5" element={<Pages.PageExample5 />} />
+        <Route path="page-example-3" element={<Pages.PageExample4 />} />
       </Route>
 
       <Route
