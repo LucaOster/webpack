@@ -1,4 +1,8 @@
 import { PayloadAction } from '@reduxjs/toolkit'
-import { getRepositoriesInTheGithubTypes } from 'services/repositories/get/api/types'
+
+export type getRepositoriesInTheGithubTypes = {
+  repositories: { name: string }[]
+  error: string
+}
 
 export type PayloadType = PayloadAction<getRepositoriesInTheGithubTypes>
