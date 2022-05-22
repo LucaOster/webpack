@@ -1,4 +1,4 @@
-import { getRepositoriesInTheGithubTypes } from './types'
+import { GetRepositoriesInTheGithubTypes } from './types'
 import { useTypedDispatch, useTypedSelector } from '../useHelpers'
 import { setGetRepositories } from './slice'
 
@@ -10,7 +10,7 @@ export const useExampleAsyncSlice = () => {
   }
 
   const setState = {
-    setGetRepositories: (repositories: getRepositoriesInTheGithubTypes) =>
+    setGetRepositories: (repositories: GetRepositoriesInTheGithubTypes) =>
       dispatch(setGetRepositories(repositories))
   }
 

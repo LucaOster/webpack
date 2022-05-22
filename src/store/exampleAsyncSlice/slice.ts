@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getRepositoriesInTheGithubTypes, PayloadType } from './types'
+import { GetRepositoriesInTheGithubTypes, PayloadType } from './types'
 
-const initialState: getRepositoriesInTheGithubTypes = {
+const initialState: GetRepositoriesInTheGithubTypes = {
   repositories: [],
   error: ''
 }
