@@ -86,26 +86,6 @@ const Home = () => {
 
         <C.Button
           fullWidth={true}
-          color="blue"
-          size="large"
-          text="Page Example 4"
-          aria-label="Page Example 4"
-          className="btn"
-          onClick={() => navigate('page-example-4')}
-        />
-
-        <C.Button
-          fullWidth={true}
-          color="blue"
-          size="large"
-          text="Page Example 5"
-          aria-label="Page Example 5"
-          className="btn"
-          onClick={() => navigate('page-example-5')}
-        />
-
-        <C.Button
-          fullWidth={true}
           color="red"
           size="large"
           text={`Theme ${showThemeToSelect}`}
