@@ -2,7 +2,7 @@ import { Component } from 'react'
 
 export default class ErrorBoundary extends Component {
   state: { hasError: boolean }
-  constructor(props: {}) {
+  constructor(props: object) {
     super(props)
     this.state = { hasError: false }
   }
@@ -17,7 +17,7 @@ export default class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Algo deu errado.</h1>
+      return <h1>Something went wrong.</h1>
     }
 
     return this.props.children

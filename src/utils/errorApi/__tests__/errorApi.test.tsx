@@ -32,7 +32,7 @@ describe('[Util] ErrorApi', () => {
   })
 
   it('should return a generic error message for generic error status return', () => {
-    error.response.status = null as any
+    error.response.status = null as never
     const unknownError = errorApi(error)
     expect(unknownError).toEqual(ERROR_MESSAGE.GENERIC_ERROR)
   })

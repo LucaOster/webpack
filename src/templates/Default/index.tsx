@@ -4,7 +4,7 @@ import * as S from './styles'
 const Default = () => {
   return (
     <S.Grid>
-      <h1>Template Default</h1>
+      <S.Header role="banner">Template Default</S.Header>
       <div>
         <Outlet />
       </div>

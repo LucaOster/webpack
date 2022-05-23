@@ -5,7 +5,7 @@ import { renderWithProviders } from 'utils'
 describe('[Template] Default', () => {
   it('should render a children', () => {
     renderWithProviders(<Default />)
-    const title = screen.getByRole('heading', { name: 'Template Default' })
-    expect(title).toBeInTheDocument()
+    const title = screen.getByRole('banner')
+    expect(title).toHaveTextContent('Template Default')
   })
 })

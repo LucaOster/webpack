@@ -8,7 +8,7 @@ const PageExample1 = () => {
   const navigate = useNavigate()
 
   return (
-    <S.Container as="section">
+    <S.Container role="main">
       <C.TitleSection title="Page Example 1" />
 
       <br />
