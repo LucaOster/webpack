@@ -21,9 +21,12 @@ const PageExample3 = () => {
   if (isLoading) return <h1>loading...</h1>
 
   return (
-    <S.Container as="section">
+    <S.Container role="main">
       <C.TitleSection title="Search Github Repositories" />
-      <C.TitleSection title="With Hook in Services saving data in the Store" />
+      <C.TitleSection
+        title="With Hook in Services saving data in the Store"
+        as="h2"
+      />
 
       <S.WrapperRepositories>
         {exampleAsyncSlice?.repositories?.map(repository => (
@@ -39,7 +42,6 @@ const PageExample3 = () => {
         ref={refInput}
         name="searchRepositoriesInTheGithub"
         placeholder="User name"
-        aria-describedby="User name"
       />
       <S.BtnGroup>
         <C.Button

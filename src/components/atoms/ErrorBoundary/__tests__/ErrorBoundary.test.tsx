@@ -7,19 +7,19 @@ const ChildWithError = () => {
 }
 
 describe('[Component] ErrorBoundary', () => {
-  let spy: jest.SpyInstance<void, [message?: any, ...optionalParams: any[]]>
-  beforeAll(() => {
-    spy = jest.spyOn(console, 'error').mockImplementation(() => {})
-  })
-  afterAll(() => spy.mockRestore())
-
   test('should render an error message', () => {
+    const spy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(() => ({ message: '' }))
+
     renderWithProviders(
       <ErrorBoundary>
         <ChildWithError />
       </ErrorBoundary>
     )
 
-    expect(screen.getByText('Algo deu errado.')).toBeInTheDocument()
+    expect(screen.getByText('Something went wrong.')).toBeInTheDocument()
+
+    spy.mockRestore()
   })
 })

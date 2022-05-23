@@ -23,7 +23,7 @@ const Home = () => {
   }
 
   return (
-    <S.Container>
+    <S.Container role="main">
       <C.TitleSection title="Web Accessibility" />
 
       <br />

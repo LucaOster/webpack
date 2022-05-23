@@ -5,7 +5,7 @@ const PageError = () => {
   useSetPageTitle({ pageTitle: 'Error Page' })
 
   return (
-    <S.Container>
+    <S.Container role="main">
       <S.Title>Page not found!</S.Title>
     </S.Container>
   )
