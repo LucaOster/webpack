@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
-    "outDir": "build/dist",
+    "outDir": "./.tsBuildInfoFile",
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "esModuleInterop": true,
@@ -23,7 +23,8 @@
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "incremental": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "./.jest/setup.ts"],
   "exclude": ["node_modules", "dist", "./.storybook"]

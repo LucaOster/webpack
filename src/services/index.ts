@@ -1,1 +1,1 @@
-export * from './repositories/get/useRepositoriesWithRedux'
+export * from './repositories/useGetRepositoriesWithRedux'
