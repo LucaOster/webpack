@@ -44,6 +44,9 @@ module.exports = env => ({
     modules: ['src', 'node_modules'],
     extensions: ['.ts', '.tsx', '.js']
   },
+  experiments: {
+    lazyCompilation: true
+  },
   devServer: {
     headers: {
       'Access-Control-Allow-Headers': '*',
