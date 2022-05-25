@@ -1,7 +1,7 @@
 import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetPageTitle } from 'hooks'
-import { useRepositoriesWithRedux } from 'services'
+import { useGetRepositoriesWithRedux } from 'services'
 import { useExampleLoading } from 'store/exampleLoading'
 import * as S from './styles'
 import * as C from 'components'
@@ -10,7 +10,8 @@ const PageExample3 = () => {
   useSetPageTitle({ pageTitle: 'Page Example 4' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
-  const { getFetchRepositories, exampleAsyncSlice } = useRepositoriesWithRedux()
+  const { getFetchRepositories, exampleAsyncSlice } =
+    useGetRepositoriesWithRedux()
   const { isLoading } = useExampleLoading()
 
   const searchRepositories = useCallback(async () => {
@@ -29,7 +30,7 @@ const PageExample3 = () => {
       />
 
       <S.WrapperRepositories>
-        {exampleAsyncSlice?.repositories?.map(repository => (
+        {exampleAsyncSlice?.data?.map(repository => (
           <span key={repository.name}>{repository.name}</span>
         ))}
 
