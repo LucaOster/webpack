@@ -1,8 +1,6 @@
-import { Provider } from 'react-redux'
 import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { themes } from '@storybook/theming'
-import { GlobalStyles } from 'globalStyles'
-import { store } from 'store/configStore'
+import { MainProviders } from 'utils'
 
 const customViewports = {
   MotoG4: {
@@ -77,9 +75,8 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <Provider store={store}>
-      <GlobalStyles />
+    <MainProviders setTheme="light">
       <Story />
-    </Provider>
+    </MainProviders>
   )
 ]
