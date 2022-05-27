@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 
-export type ChildrenType = {
+export type WrapperProps = {
   children: ReactNode
+  setTheme?: 'light' | 'dark'
 }
