@@ -1,3 +1,6 @@
 import { ReactNode } from 'react'
 
-export type MainProvidersProps = { children: ReactNode }
+export type MainProvidersProps = {
+  children: ReactNode
+  setTheme?: 'dark' | 'light'
+}

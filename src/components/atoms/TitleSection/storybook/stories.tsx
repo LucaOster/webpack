@@ -1,11 +1,16 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import TitleSection from '..'
-import { TitleProps } from '../types'
 
-const Template: Story<TitleProps> = args => <TitleSection {...args} />
+export default {
+  title: 'Atoms/TitleSection',
+  component: TitleSection,
+  parameters: {
+    controls: { sort: 'requiredFirst' }
+  }
+} as ComponentMeta<typeof TitleSection>
 
-export const Default = Template.bind({})
+const Template: ComponentStory<typeof TitleSection> = args => (
+  <TitleSection {...args} title="This is an example title" />
+)
 
-Default.args = {
-  title: 'This is an example title'
-}
+export const Basic = Template.bind({})

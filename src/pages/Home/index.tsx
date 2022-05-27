@@ -8,7 +8,7 @@ import { ReactComponent as IconArrowUp } from 'assets/icons/arrow_up.svg'
 
 const Home = () => {
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
-  const { exampleSimple, setChangeExample } = useExampleSimple()
+  const { isExampleSimple, setChangeExample } = useExampleSimple()
   const { exampleWithPayload, setAddText, setRemoveText } =
     useExampleWithPayload()
   const { setTheme, showThemeToSelect } = useThemeDetect()
@@ -34,7 +34,7 @@ const Home = () => {
 
       <h1>
         Redux Example State:
-        {exampleSimple ? ' true' : ' false'}
+        {isExampleSimple ? ' true' : ' false'}
       </h1>
 
       <br />

@@ -1,6 +1,14 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import TitleAnimation from '..'
 
-const Template: Story = args => <TitleAnimation {...args} />
+export default {
+  title: 'Molecules/TitleAnimation',
+  component: TitleAnimation,
+  parameters: {
+    controls: { sort: 'requiredFirst' }
+  }
+} as ComponentMeta<typeof TitleAnimation>
+
+const Template: ComponentStory<typeof TitleAnimation> = () => <TitleAnimation />
 
 export const Default = Template.bind({})

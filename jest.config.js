@@ -13,6 +13,7 @@ module.exports = {
     'src/components/index.tsx',
     'src/hooks/index.ts',
     'src/templates/index.ts',
+    'utils/providers',
     'src/utils/index.tsx',
     'src/assets',
     'src/types',

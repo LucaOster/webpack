@@ -1,6 +1,6 @@
 import { MainProviders } from 'utils/providers/mainProviders'
-import { ChildrenType } from './types'
+import { WrapperProps } from './types'
 
-export const wrapper = ({ children }: ChildrenType) => (
-  <MainProviders>{children}</MainProviders>
+export const wrapper = ({ children, setTheme }: WrapperProps) => (
+  <MainProviders setTheme={setTheme}>{children}</MainProviders>
 )
