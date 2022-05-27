@@ -45,7 +45,7 @@ module.exports = env => ({
     extensions: ['.ts', '.tsx', '.js']
   },
   experiments: {
-    lazyCompilation: true
+    lazyCompilation: isDevelopment
   },
   devServer: {
     headers: {
