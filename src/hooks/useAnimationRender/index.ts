@@ -4,9 +4,12 @@ export const useAnimationRender = ({ timeMilSecToRemoveComponent = 0 }) => {
   const [isRenderComponent, setIsRenderComponent] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  useEffect(() => {
-    isRenderComponent && setIsVisible(true)
-  }, [isRenderComponent])
+  useEffect(
+    function changeComponentVisibility() {
+      isRenderComponent && setIsVisible(true)
+    },
+    [isRenderComponent]
+  )
 
   const changeVisibility = useCallback(() => {
     setIsVisible(false)

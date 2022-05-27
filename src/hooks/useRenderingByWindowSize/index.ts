@@ -17,7 +17,7 @@ export const useRenderingByWindowSize = () => {
     getWindowSize()
   )
 
-  useEffect(() => {
+  useEffect(function setBreakpointByWindowWidth() {
     const changeWindowSize = () => {
       setWindowSize(getWindowSize())
     }

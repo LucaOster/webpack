@@ -11,9 +11,12 @@ export const useThemeDetect = () => {
     setIsPrefersColorScheme
   } = useExampleTheme()
 
-  useEffect(() => {
-    isPrefersColorScheme && setIsPrefersColorSchemeDark()
-  }, [isPrefersColorScheme, setIsPrefersColorSchemeDark])
+  useEffect(
+    function setPrefersColorScheme() {
+      isPrefersColorScheme && setIsPrefersColorSchemeDark()
+    },
+    [isPrefersColorScheme, setIsPrefersColorSchemeDark]
+  )
 
   const prefersColorScheme = isPrefersColorSchemeDark ? 'dark' : 'light'
   const theme = isDarkMode ? 'dark' : 'light'
@@ -24,9 +27,12 @@ export const useThemeDetect = () => {
 
   const showThemeToSelect = selectedTheme === 'dark' ? 'light' : 'dark'
 
-  useLayoutEffect(() => {
-    document.body.dataset.theme = selectedTheme
-  }, [selectedTheme])
+  useLayoutEffect(
+    function changeTheme() {
+      document.body.dataset.theme = selectedTheme
+    },
+    [selectedTheme]
+  )
 
   const setTheme = () => {
     setIsPrefersColorScheme()
