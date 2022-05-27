@@ -1,7 +1,30 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Button from '..'
-import { BtnProps } from '../types'
 
-export const Template: Story<BtnProps> = args => <Button {...args} />
+export default {
+  title: 'Atoms/Button',
+  component: Button,
+  args: {
+    text: 'Click Here',
+    size: 'large',
+    color: 'blue',
+    disabled: false,
+    fullWidth: false
+  },
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'inline-radio' }
+    },
+    color: {
+      options: ['gray', 'blue'],
+      control: { type: 'inline-radio' }
+    },
+    onClick: { action: 'onClick' }
+  },
+  parameters: { controls: { exclude: ['icon'], sort: 'requiredFirst' } }
+} as ComponentMeta<typeof Button>
 
-export const Default = Template.bind({})
+const Template: ComponentStory<typeof Button> = args => <Button {...args} />
+
+export const Basic = Template.bind({})

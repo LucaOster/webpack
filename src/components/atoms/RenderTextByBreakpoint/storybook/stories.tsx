@@ -1,6 +1,16 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import RenderTextByBreakpoint from '..'
 
-const Template: Story = args => <RenderTextByBreakpoint {...args} />
+export default {
+  title: 'Atoms/RenderTextByBreakpoint',
+  component: RenderTextByBreakpoint,
+  parameters: {
+    controls: { sort: 'requiredFirst' }
+  }
+} as ComponentMeta<typeof RenderTextByBreakpoint>
 
-export const Default = Template.bind({})
+const Template: ComponentStory<typeof RenderTextByBreakpoint> = () => (
+  <RenderTextByBreakpoint />
+)
+
+export const Basic = Template.bind({})
