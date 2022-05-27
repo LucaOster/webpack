@@ -73,7 +73,7 @@
   },
   "overrides": [
     {
-      "files": ["*.stories.@(tsx|mdx|js|jsx|mjs|cjs)"],
+      "files": ["*.stories.@(tsx|js|jsx)"],
       "rules": {
         "storybook/hierarchy-separator": "error"
       },
