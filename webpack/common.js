@@ -2,11 +2,7 @@
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {
-  DefinePlugin,
-  EnvironmentPlugin,
-  HotModuleReplacementPlugin
-} = require('webpack')
+const { DefinePlugin, EnvironmentPlugin } = require('webpack')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
 const isProduction = process.env.ENVIRONMENT === 'PRD'
@@ -115,7 +111,6 @@ module.exports = env => ({
       minify: isProduction,
       cache: true
     }),
-    ...(isDevelopment ? [new HotModuleReplacementPlugin()] : []),
     ...(isDevelopment ? [new ReactRefreshWebpackPlugin()] : [])
   ]
 })
