@@ -31,7 +31,7 @@ module.exports = {
     'stories.tsx',
     'types.ts'
   ],
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   moduleNameMapper: {
