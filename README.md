@@ -1,8 +1,9 @@
 <div align="center">
 
-  <a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)</a>
-  ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
-  ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)</a>
+![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
+
 </div>
 
 <h1 align="center">Boilerplate Complete and updated with React.js, Webpack, Typescript, Styled-Components, Tests and Redux Toolkit</h1>
@@ -17,18 +18,13 @@ We sought to achieve 3 pillars: readability, reusability, and refactorability.
 
 For this purpose, logical hooks were used to decouple the Store Layer and the Services Layer. Thus, the UI only depends on the Hooks layer and never directly imports any state manager methods and any direct calls from the Services Layer.
 
-In the construction of the UI, the Atomic Design structure was chosen, organizing the global components into atoms, molecules and organisms. To create the page layouts, the idea of templates was used.
+In the construction of the UI, the Atomic Design structure was chosen, organizing the global components into atoms, molecules, organisms and templates.
 
 In addition to being constantly updated, this project was configured in the smallest details to serve as a basis for professional projects that require standardized and easy-to-maintain code architecture and design.
 
 <br />
 
 <div align="center">
-  <img src="informations/simplifiedArchitecture.svg" alt="Simplified Architecture">
-
-  <br />
-  <br />
-  
   <img src="informations/architecture.svg" alt="Architecture">
   
   <br />
@@ -41,23 +37,25 @@ In addition to being constantly updated, this project was configured in the smal
 
 # :pushpin: Contents
 
-* [Technologies](#globe_with_meridians-technologies)
-* [Features](#triangular_flag_on_post-features)
-* [Prerequisites](#white_check_mark-prerequisites)
-* [How to install and run the project](#question-how-to-install-and-run-the-project)
-  * [Clone Repository](#clone-repository)
-  * [Install Dependencies](#install-dependencies)
-  * [Start Development Environment](#start-development-environment)
-  * [Generate Production Build](#generate-production-build)
-  * [Generate Development Build](#generate-development-build)
-  * [Start Production Environment](#start-production-environment)
-  * [Run Tests](#run-tests)
-  * [Run Tests in Watch Mode](#run-tests-in-watch-mode)
-  * [Launch Storybook in Development Mode](#launch-storybook-in-development-mode)
-  * [Generate Storybook Production Build](#generate-storybook-production-build)
-  * [Run Lints](#run-lints)
-* [Important Considerations](#rotating_light-important-considerations)
-* [Author](#technologist-author)
+- [Technologies](#globe_with_meridians-technologies)
+- [Features](#triangular_flag_on_post-features)
+- [Prerequisites](#white_check_mark-prerequisites)
+- [How to install and run the project](#question-how-to-install-and-run-the-project)
+  - [Clone Repository](#clone-repository)
+  - [Install Dependencies](#install-dependencies)
+  - [Start Development Environment](#start-development-environment)
+  - [Generate Production Build](#generate-production-build)
+  - [Generate Development Build](#generate-development-build)
+  - [Start Production Environment](#start-production-environment)
+  - [Run Tests](#run-tests)
+  - [Run Tests in Watch Mode](#run-tests-in-watch-mode)
+  - [Launch Storybook in Development Mode](#launch-storybook-in-development-mode)
+  - [Generate Storybook Production Build](#generate-storybook-production-build)
+  - [Run Lints](#run-lints)
+  - [Format code with prettier](#format-code-with-prettier)
+  - [Check for Available Updates for Dependencies](#check-for-available-updates-for-dependencies)
+- [Important Considerations](#rotating_light-important-considerations)
+- [Author](#technologist-author)
 
 <br />
 
@@ -75,7 +73,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 🚩 Lints: Husky, ESlint, Stylelint, Commitlint, Lint-Staged, Prettier, EditorConfig and Typecheck
 
-✅ Jest 
+✅ Jest
 
 🐙 React Testing Library
 
@@ -96,6 +94,7 @@ In addition to being constantly updated, this project was configured in the smal
 - [x] Accessible for mouseless navigation and screen readers;
 
 - [x] Custom hooks for:
+
   - [x] animation in the assembly and disassembly of components;
   - [x] conditional rendering of components by breakpoints;
   - [x] dark/light theme change;
@@ -119,7 +118,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 - node (latest version lts)
 
-- yarn or npm
+- yarn
 
 <br />
 
@@ -182,7 +181,7 @@ yarn test:w
 ## Launch Storybook in Development Mode
 
 ```bash
-yarn sb
+yarn storybook
 ```
 
 Available in http://localhost:6006
@@ -190,7 +189,7 @@ Available in http://localhost:6006
 ## Generate Storybook Production Build
 
 ```bash
-yarn build-sb
+yarn build-storybook
 ```
 
 ## Run Lints
@@ -207,6 +206,22 @@ yarn lint:css
 yarn typecheck
 ```
 
+```bash
+yarn check-format
+```
+
+## Format code with prettier
+
+```bash
+yarn format
+```
+
+## Check for Available Updates for Dependencies
+
+```bash
+yarn check-update
+```
+
 <br />
 
 ---
@@ -217,12 +232,13 @@ yarn typecheck
 
 - Due to husky's build check settings, to push with git, the development server must be stopped first or an error will occur in the `git push` command.
 
-- Some conventions widely used in the React ecosystem were used. For example: 
+- Some conventions widely used in the React ecosystem were used. For example:
+
   - In the root of the components folder, an export index was created to facilitate the use of components with named import. In this way, to use a component just import it as an object and use it with the prefix "C", thus avoiding several unnecessary lines of imports:
-  
+
     ```jsx
     import * as C from 'components'
-    
+
     ...
     <C.Card>
       <C.Input />
@@ -234,7 +250,7 @@ yarn typecheck
 
     ```jsx
     import * as S from './styles'
-    
+
     ...
     <S.Wrapper>
       <S.Title />

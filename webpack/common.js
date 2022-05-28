@@ -44,9 +44,6 @@ module.exports = env => ({
     modules: ['src', 'node_modules'],
     extensions: ['.ts', '.tsx', '.js']
   },
-  experiments: {
-    lazyCompilation: isDevelopment
-  },
   devServer: {
     headers: {
       'Access-Control-Allow-Headers': '*',
@@ -83,7 +80,7 @@ module.exports = env => ({
             parseMap: true,
             jsc: {
               parser: { syntax: 'typescript', tsx: true },
-              target: 'es2022',
+              target: 'es2021',
               minify: { compress: isProduction },
               transform: {
                 react: {

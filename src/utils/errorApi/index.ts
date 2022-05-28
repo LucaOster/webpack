@@ -1,4 +1,4 @@
-import { ERROR_MESSAGE } from 'constantes/errorApi'
+import { ERROR_MESSAGE } from 'constants/errorApi'
 import { ErrorApi } from 'types/errorApi'
 
 export const errorApi = (e: ErrorApi) => {

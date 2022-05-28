@@ -1,7 +1,7 @@
 import * as S from './styles'
 import { ErrorProps } from './types'
 
-const Error = ({ children }: ErrorProps) => {
+const ErrorTemplate = ({ children }: ErrorProps) => {
   return (
     <S.Grid>
       <S.Header role="banner">Template Error</S.Header>
@@ -10,4 +10,4 @@ const Error = ({ children }: ErrorProps) => {
   )
 }
 
-export default Error
+export default ErrorTemplate

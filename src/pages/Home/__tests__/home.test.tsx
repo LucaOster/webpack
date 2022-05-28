@@ -6,7 +6,6 @@ import { mockedUseNavigate } from 'mocks'
 
 describe('[Page] Home', () => {
   beforeEach(() => {
-    jest.resetModules()
     mockedUseNavigate.mockClear()
   })
 

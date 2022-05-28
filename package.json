@@ -12,22 +12,23 @@
     "start": "env-cmd -f .env.prod webpack serve --open --config webpack/webpack.prod.js",
     "build": "env-cmd -f .env.prod webpack --config webpack/webpack.prod.js",
     "build:dev": "env-cmd -f .env.dev webpack --config webpack/webpack.dev.js",
-    "lint": "eslint src/**/*.{ts,tsx,js,jsx,json} --max-warnings=0",
+    "lint": "eslint src --ext ts,tsx --max-warnings=0",
     "lint:css": "stylelint src/**/*.ts",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "test": "jest --maxWorkers=50% --passWithNoTests",
     "test:w": "jest --watch --maxWorkers=25% --passWithNoTests",
-    "test:coverage": "jest --maxWorkers=50% --passWithNoTests --coverage",
-    "sb": "start-storybook -p 6006",
-    "build-sb": "build-storybook",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
-    "verify:update": "yarn upgrade-interactive --latest",
+    "check-update": "yarn upgrade-interactive --latest",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-sb"
+      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-storybook"
     }
   },
   "lint-staged": {
