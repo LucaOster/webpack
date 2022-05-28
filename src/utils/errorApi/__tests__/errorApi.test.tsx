@@ -1,5 +1,5 @@
 import { errorApi } from '..'
-import { ERROR_MESSAGE } from 'constantes/errorApi'
+import { ERROR_MESSAGE } from 'constants/errorApi'
 
 const error = {
   response: {

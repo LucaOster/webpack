@@ -2,15 +2,6 @@ import { act, renderHook } from '@testing-library/react-hooks'
 import { useAnimationRender } from '..'
 
 describe('[Hooks] useAnimationRender', () => {
-  beforeEach(() => {
-    jest.useFakeTimers()
-  })
-
-  afterEach(() => {
-    jest.runOnlyPendingTimers()
-    jest.useRealTimers()
-  })
-
   it('should return false', () => {
     const { result } = renderHook(() =>
       useAnimationRender({ timeMilSecToRemoveComponent: 1 })
