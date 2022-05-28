@@ -1,3 +1,12 @@
-/src/assets/*
-!.storybook
-!.jest
+src/assets/*
+.jest
+.storybook
+dist
+yarn.lock
+.gitignore
+.prettierignore
+.gitattributes
+componentGenerator
+coverage
+storybook-static
+.tsBuildInfoFile
