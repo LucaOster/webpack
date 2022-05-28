@@ -15,14 +15,14 @@ const styledComponentsOptions = {
   displayName: true,
   fileName: false,
   namespace: process.env.NAME_APPLICATTION,
-  sourceMap: isDevelopment,
+  sourceMap: true,
   pure: true
 }
 
 module.exports = env => ({
   mode: env.mode,
   entry: './src/index',
-  devtool: isDevelopment ? 'source-map' : false,
+  devtool: 'source-map',
   output: {
     clean: true,
     publicPath: env.publicPath,
