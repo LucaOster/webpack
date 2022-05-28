@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "outDir": "./.tsBuildInfoFile",
-    "target": "ES2022",
+    "target": "ES2021",
     "lib": ["dom", "dom.iterable", "esnext"],
     "esModuleInterop": true,
     "module": "esnext",
@@ -26,6 +26,12 @@
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "./.jest/setup.ts"],
-  "exclude": ["node_modules", "dist", "./.storybook"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".storybook",
+    "src/**/stories.tsx",
+    "src/**/*.test*"
+  ]
 }
