@@ -15,14 +15,14 @@ const styledComponentsOptions = {
   displayName: true,
   fileName: false,
   namespace: process.env.NAME_APPLICATTION,
-  sourceMap: true,
+  sourceMap: isDevelopment,
   pure: true
 }
 
 module.exports = env => ({
   mode: env.mode,
   entry: './src/index',
-  devtool: 'source-map',
+  devtool: isDevelopment ? 'source-map' : false,
   output: {
     clean: true,
     publicPath: env.publicPath,
@@ -43,9 +43,6 @@ module.exports = env => ({
   resolve: {
     modules: ['src', 'node_modules'],
     extensions: ['.ts', '.tsx', '.js']
-  },
-  experiments: {
-    lazyCompilation: isDevelopment
   },
   devServer: {
     headers: {
@@ -83,7 +80,7 @@ module.exports = env => ({
             parseMap: true,
             jsc: {
               parser: { syntax: 'typescript', tsx: true },
-              target: 'es2022',
+              target: 'es2021',
               minify: { compress: isProduction },
               transform: {
                 react: {
