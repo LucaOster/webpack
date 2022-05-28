@@ -28,7 +28,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-sb"
+      "pre-push": "yarn typecheck && yarn test --findRelatedTests -b && yarn build && yarn build-storybook"
     }
   },
   "lint-staged": {

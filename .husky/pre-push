@@ -7,4 +7,4 @@ npx --no-install
 yarn typecheck
 yarn test
 yarn build
-yarn build-sb
+yarn build-storybook
