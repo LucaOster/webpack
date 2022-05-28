@@ -15,8 +15,10 @@
     "selector-id-pattern": null,
     "value-keyword-case": null
   },
-  "overrides": [{
-    "files": ["**/*.ts"],
-    "customSyntax": "@stylelint/postcss-css-in-js"
-  }]
+  "overrides": [
+    {
+      "files": ["**/*.ts"],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ]
 }
