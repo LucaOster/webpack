@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'utils'
 import PageExample3 from '..'
@@ -28,8 +28,8 @@ describe('[Page] PageExample3', () => {
     const repositoryListText2 = screen.getByText('example2')
     const input = screen.getByRole('textbox')
 
-    userEvent.type(input, 'everton-dgn')
-    userEvent.click(btn)
+    fireEvent.input(input, { target: { value: 'everton-dgn' } })
+    fireEvent.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(1)
     expect(repositoryListText1).toBeInTheDocument()
@@ -41,7 +41,7 @@ describe('[Page] PageExample3', () => {
 
     const btn = screen.getByRole('button', { name: 'Return' })
 
-    userEvent.click(btn)
+    fireEvent.click(btn)
     userEvent.hover(btn)
 
     expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
@@ -79,8 +79,8 @@ describe('[Page] PageExample3', () => {
     const repositoryListText2 = screen.queryByText('example2')
     const input = screen.getByRole('textbox')
 
-    userEvent.type(input, 'everton-dgn')
-    userEvent.click(btn)
+    fireEvent.input(input, { target: { value: 'everton-dgn' } })
+    fireEvent.click(btn)
 
     expect(error).toBeInTheDocument()
     expect(verifyCall).toHaveBeenCalledTimes(1)

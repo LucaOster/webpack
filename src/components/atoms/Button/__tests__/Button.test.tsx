@@ -1,9 +1,28 @@
-import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from 'utils'
 import Button from '..'
 
 describe('[Component] Button', () => {
+  it('should call a function once on click on the button', () => {
+    const onClick = jest.fn()
+
+    renderWithProviders(
+      <Button
+        onClick={onClick}
+        text="Mais Informações"
+        color="blue"
+        size="large"
+      />
+    )
+
+    const btn = screen.getByRole('button', { name: /Mais Informações/i })
+
+    fireEvent.click(btn)
+
+    expect(onClick).toHaveBeenCalled()
+    expect(onClick).toHaveBeenCalledTimes(1)
+  })
+
   it('should render a small blue button with text', () => {
     const { container } = renderWithProviders(
       <Button text="Mais Informações" color="blue" size="small" />
@@ -46,26 +65,6 @@ describe('[Component] Button', () => {
       opacity: 0.5
     })
     expect(btn).toBeDisabled()
-  })
-
-  it('should call a function once on click on the button', () => {
-    const onClick = jest.fn()
-
-    renderWithProviders(
-      <Button
-        onClick={onClick}
-        text="Mais Informações"
-        color="blue"
-        size="large"
-      />
-    )
-
-    const btn = screen.getByRole('button', { name: /Mais Informações/i })
-
-    userEvent.click(btn)
-
-    expect(onClick).toHaveBeenCalled()
-    expect(onClick).toHaveBeenCalledTimes(1)
   })
 
   it('should render a Button with full width', () => {
