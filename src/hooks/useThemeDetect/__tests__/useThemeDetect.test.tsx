@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react-hooks'
+import { act, renderHook } from '@testing-library/react'
 import { wrapper } from 'utils'
 import { useThemeDetect } from '..'
 import * as store from 'store/exampleTheme/useExampleTheme'
