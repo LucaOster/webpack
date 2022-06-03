@@ -1,5 +1,5 @@
-import { act, renderHook } from '@testing-library/react'
-import { wrapper } from 'utils'
+import { act } from '@testing-library/react'
+import { renderHooksProvider } from 'utils'
 import { useThemeDetect } from '..'
 import * as store from 'store/exampleTheme/useExampleTheme'
 
@@ -14,7 +14,7 @@ const mockedUseExampleTheme = {
 
 describe('[Hooks] useThemeDetect', () => {
   it('should switch theme between dark and light when calling setTheme and toggle data-theme attribute in body', () => {
-    const { result } = renderHook(() => useThemeDetect(), { wrapper })
+    const { result } = renderHooksProvider(() => useThemeDetect())
 
     expect(result.current.showThemeToSelect).toBe('dark')
     expect(document.body.dataset.theme).toBe('light')
@@ -41,7 +41,7 @@ describe('[Hooks] useThemeDetect', () => {
       isDarkMode: false
     })
 
-    const { result } = renderHook(() => useThemeDetect(), { wrapper })
+    const { result } = renderHooksProvider(() => useThemeDetect())
 
     expect(result.current.showThemeToSelect).toBe('dark')
     expect(document.body.dataset.theme).toBe('light')
@@ -53,7 +53,7 @@ describe('[Hooks] useThemeDetect', () => {
       isDarkMode: false
     })
 
-    const { result } = renderHook(() => useThemeDetect(), { wrapper })
+    const { result } = renderHooksProvider(() => useThemeDetect())
 
     expect(result.current.showThemeToSelect).toBe('light')
     expect(document.body.dataset.theme).toBe('dark')
@@ -62,7 +62,7 @@ describe('[Hooks] useThemeDetect', () => {
   it('should switch theme between dark and light when isPrefersColorScheme is true when calling setTheme and toggle data-theme attribute in body', () => {
     jest.spyOn(store, 'useExampleTheme').mockReturnValue(mockedUseExampleTheme)
 
-    const { result } = renderHook(() => useThemeDetect(), { wrapper })
+    const { result } = renderHooksProvider(() => useThemeDetect())
 
     act(() => {
       result.current.setTheme()

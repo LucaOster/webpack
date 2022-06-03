@@ -1,6 +1,10 @@
+import { renderHook } from '@testing-library/react'
 import { MainProviders } from 'utils/providers/mainProviders'
-import { WrapperProps } from './types'
+import { RenderHooksProviderProps, WrapperProps } from './types'
 
-export const wrapper = ({ children, setTheme }: WrapperProps) => (
-  <MainProviders setTheme={setTheme}>{children}</MainProviders>
+const wrapper = ({ children }: WrapperProps) => (
+  <MainProviders>{children}</MainProviders>
 )
+
+export const renderHooksProvider = (children: RenderHooksProviderProps) =>
+  renderHook(children, { wrapper })

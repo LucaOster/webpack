@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from 'react'
 
 export type WrapperProps = {
   children: ReactNode
-  setTheme?: 'light' | 'dark'
 }
+
+export type RenderHooksProviderProps = any
