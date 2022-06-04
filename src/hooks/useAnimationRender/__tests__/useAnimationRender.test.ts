@@ -1,9 +1,10 @@
-import { act, renderHook } from '@testing-library/react'
+import { act } from '@testing-library/react'
+import { renderHooksProvider } from 'utils'
 import { useAnimationRender } from '..'
 
 describe('[Hooks] useAnimationRender', () => {
   it('should return false', () => {
-    const { result } = renderHook(() =>
+    const { result } = renderHooksProvider(() =>
       useAnimationRender({ timeMilSecToRemoveComponent: 1 })
     )
     expect(result.current.isRenderComponent).toBeFalsy()
@@ -11,7 +12,7 @@ describe('[Hooks] useAnimationRender', () => {
   })
 
   it('should toggle state into true and false when changeStateComponent function is called', () => {
-    const { result } = renderHook(() => useAnimationRender({}))
+    const { result } = renderHooksProvider(() => useAnimationRender({}))
 
     expect(result.current.isRenderComponent).toBeFalsy()
     expect(result.current.isVisible).toBeFalsy()
