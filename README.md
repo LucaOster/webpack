@@ -3,6 +3,7 @@
 <a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)</a>
 ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
 ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=orange&style=plastic)
 
 </div>
 
