@@ -23,7 +23,8 @@
     "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "check-update": "yarn upgrade-interactive --latest",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -48,6 +49,11 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "semantic-release": "^19.0.3",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/commit-analyzer": "9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "10.0.3",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.6",
