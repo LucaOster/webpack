@@ -1,5 +1,5 @@
 {
-  "branch": "master",
+  "branches": ["master"],
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
@@ -14,7 +14,6 @@
       "@semantic-release/git",
       {
         "assets": [
-          "dist",
           "package.json",
           "CHANGELOG.md",
           "yarn.lock"
