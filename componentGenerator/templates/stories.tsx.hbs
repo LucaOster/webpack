@@ -1,7 +1,24 @@
-import { Story } from '@storybook/react'
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import {{pascalCase name}} from '..'
-import { {{pascalCase name}}Props } from '../types'
 
-const Template: Story<{{pascalCase name}}Props> = args => <{{pascalCase name}} {...args} />
+export default {
+  title: 'TipoDoComponente/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  args: {
+    text: 'Click Here'
+  },
+  argTypes: {
+    size: {
+      options: ['small', 'medium', 'large'],
+      control: { type: 'inline-radio' }
+    },
+    onClick: { action: 'onClick' }
+  },
+  parameters: {
+    controls: { sort: 'requiredFirst' }
+  }
+} as ComponentMeta<typeof {{pascalCase name}}>
 
-export const Default = Template.bind({})
+const Template: ComponentStory<typeof {{pascalCase name}}> = args => <{{pascalCase name}} {...args} />
+
+export const Basic = Template.bind({})

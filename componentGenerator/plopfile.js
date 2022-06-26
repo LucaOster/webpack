@@ -1,43 +1,92 @@
+const components = ['atoms', 'molecules', 'organisms']
+const template = `../src/components/templates/{{pascalCase name}}`
+const type = 'add'
+const page = `../src/pages/{{pascalCase name}}`
+const prompts = [
+  {
+    type: 'input',
+    name: 'name',
+    message: 'What is your component name?'
+  }
+]
+
 module.exports = plop => {
-  plop.setGenerator('component', {
-    description: 'Create a component',
-    prompts: [
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is your component name?'
-      }
-    ],
+  components.map(el => {
+    const component = `../src/components/${el}/{{pascalCase name}}`
+
+    return plop.setGenerator(el, {
+      description: `Create a ${el}`,
+      prompts,
+      actions: [
+        {
+          type,
+          path: `${component}/index.tsx`,
+          templateFile: 'templates/component.tsx.hbs'
+        },
+        {
+          type,
+          path: `${component}/styles.ts`,
+          templateFile: 'templates/styles.ts.hbs'
+        },
+        {
+          type,
+          path: `${component}/storybook/stories.tsx`,
+          templateFile: 'templates/stories.tsx.hbs'
+        },
+        {
+          type,
+          path: `${component}/__tests__/test.tsx`,
+          templateFile: 'templates/test.tsx.hbs'
+        },
+        {
+          type,
+          path: `${component}/types.ts`,
+          templateFile: 'templates/types.ts.hbs'
+        }
+      ]
+    })
+  })
+
+  plop.setGenerator('templates', {
+    description: `Create a templates`,
+    prompts,
     actions: [
       {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/index.tsx',
-        templateFile: 'templates/component.tsx.hbs'
+        type,
+        path: `${template}/index.tsx`,
+        templateFile: 'templates/template.tsx.hbs'
       },
       {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/styles.ts',
+        type,
+        path: `${template}/styles.ts`,
         templateFile: 'templates/styles.ts.hbs'
       },
       {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/storybook/stories.tsx',
-        templateFile: 'templates/stories.tsx.hbs'
-      },
-      {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/storybook/stories.mdx',
-        templateFile: 'templates/stories.mdx.hbs'
-      },
-      {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/__tests__/test.tsx',
+        type,
+        path: `${template}/__tests__/test.tsx`,
         templateFile: 'templates/test.tsx.hbs'
+      }
+    ]
+  })
+
+  plop.setGenerator('pages', {
+    description: `Create a pages`,
+    prompts,
+    actions: [
+      {
+        type,
+        path: `${page}/index.tsx`,
+        templateFile: 'templates/page.tsx.hbs'
       },
       {
-        type: 'add',
-        path: '../src/components/{{pascalCase name}}/types.ts',
-        templateFile: 'templates/types.ts.hbs'
+        type,
+        path: `${page}/styles.ts`,
+        templateFile: 'templates/styles.ts.hbs'
+      },
+      {
+        type,
+        path: `${page}/__tests__/test.tsx`,
+        templateFile: 'templates/test.tsx.hbs'
       }
     ]
   })

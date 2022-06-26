@@ -2,16 +2,16 @@ import styled from 'styled-components'
 import T from 'theme'
 
 export const Container = styled.main`
-  margin: 2rem auto;
+  margin: 20px auto;
 
   ${T.breakpoints.custom(800)} {
-    margin: 12rem auto;
+    margin: 120px auto;
   }
 `
 
 export const Column = styled.div`
   max-width: 35rem;
-  margin: 5rem auto;
+  margin: 50px auto;
 
   .btn {
     opacity: 0;

@@ -20,7 +20,7 @@ export const TitleAnimation = styled.h1<{ isVisible: boolean }>`
 
 export const Column = styled.div`
   max-width: 35rem;
-  margin: 5rem auto;
+  margin: 50px auto;
 
   .btn {
     opacity: 0;
