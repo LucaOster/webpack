@@ -5,4 +5,4 @@ export type WrapperProps = {
   children: ReactNode
 }
 
-export type RenderHooksProviderProps = any
+export type RenderHooksProviderProps = () => any
