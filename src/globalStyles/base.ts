@@ -1,6 +1,6 @@
-import { ColorsTheme } from './colors'
 import { createGlobalStyle } from 'styled-components'
 import T from 'theme'
+import { ColorsTheme } from './colors'
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -13,6 +13,12 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none !important;
     outline: none;
     font-family: ${T.fonts.family};
+    line-height: calc(1em + 0.5rem);
+
+    @media (prefers-reduced-motion) {
+      transition: none!important;
+      animation-duration: 0ms!important;
+    }
   }
 
   html {
@@ -24,6 +30,10 @@ export const GlobalStyles = createGlobalStyle`
   #root {
     background-color: ${T.colors.secondary};
     color: ${T.colors.black};
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
   }
 
   #root,
@@ -46,6 +56,7 @@ export const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     justify-content: flex-start;
     min-height: 100vh;
+    isolation: isolate;
   }
 
   a,
@@ -54,16 +65,21 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+
   ::-webkit-scrollbar,
   scrollbar-width {
     width: 1.6rem !important;
-    background-color: ${T.colors.white};
+    background-color: #FFFFFF28;
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: ${T.colors.primary};
-    border-radius: 2rem;
-    border: 0.3rem solid ${T.colors.white};
+    border-radius: 20px;
+    border: 0.3rem solid #fff;
   }
 
   :root {
