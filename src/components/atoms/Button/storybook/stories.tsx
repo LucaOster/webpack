@@ -22,7 +22,9 @@ export default {
     },
     onClick: { action: 'onClick' }
   },
-  parameters: { controls: { exclude: ['icon'], sort: 'requiredFirst' } }
+  parameters: {
+    controls: { exclude: ['icon'], sort: 'requiredFirst' }
+  }
 } as ComponentMeta<typeof Button>
 
 const Template: ComponentStory<typeof Button> = args => <Button {...args} />

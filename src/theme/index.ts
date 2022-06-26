@@ -7,11 +7,11 @@ import { windowSizes } from './windowSizes'
 
 const grid = {
   container: '130rem',
-  gutter: '2.4rem'
+  gutter: '24px'
 }
 
 const border = {
-  radius: '0.4rem',
+  radius: '4px',
   circle: '50%'
 }
 

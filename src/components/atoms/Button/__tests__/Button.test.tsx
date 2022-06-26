@@ -31,7 +31,7 @@ describe('[Component] Button', () => {
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
     expect(btn).toHaveStyle({
       height: 'min-content',
-      padding: '0.8rem 1.2rem',
+      padding: '8px 12px',
       fontSize: '1.2rem'
     })
 
@@ -48,7 +48,7 @@ describe('[Component] Button', () => {
 
     expect(btn).toHaveStyle({
       height: 'min-content',
-      padding: '1.2rem 2.4rem',
+      padding: '12px 24px',
       fontSize: '1.4rem'
     })
   })

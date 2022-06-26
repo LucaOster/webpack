@@ -59,7 +59,7 @@ export const Container = styled.button<BtnProps>`
     justify-content: center;
     flex-wrap: nowrap;
     border: 2px solid transparent;
-    text-shadow: 0 0 0.3rem rgb(0 0 0 / 60%);
+    text-shadow: 0 0 3px #00000099;
     transition: background-color 0.15s ease-in-out;
     width: 100%;
     ${!!color && ColorsBtn[color]};
@@ -86,7 +86,7 @@ export const Container = styled.button<BtnProps>`
     }
 
     svg + span {
-      margin-left: 1rem;
+      margin-left: 10px;
     }
 
     svg {

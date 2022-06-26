@@ -4,13 +4,13 @@ import T from 'theme'
 export const Container = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 2rem auto;
+  margin: 20px auto;
   padding: 0;
   align-items: center;
 
   ${T.breakpoints.custom(800)} {
-    margin: 12rem auto;
-    padding: 0 2rem;
+    margin: 120px auto;
+    padding: 0 20px;
   }
 
   svg {
