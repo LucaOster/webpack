@@ -1,7 +1,7 @@
 const components = ['atoms', 'molecules', 'organisms']
-const template = `../src/components/templates/{{pascalCase name}}`
+const template = `../src/ui/components/templates/{{pascalCase name}}`
 const type = 'add'
-const page = `../src/pages/{{pascalCase name}}`
+const page = `../src/ui/pages/{{pascalCase name}}`
 const prompts = [
   {
     type: 'input',
@@ -12,7 +12,7 @@ const prompts = [
 
 module.exports = plop => {
   components.map(el => {
-    const component = `../src/components/${el}/{{pascalCase name}}`
+    const component = `../src/ui/components/${el}/{{pascalCase name}}`
 
     return plop.setGenerator(el, {
       description: `Create a ${el}`,
