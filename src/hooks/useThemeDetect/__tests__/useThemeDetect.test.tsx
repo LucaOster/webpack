@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react'
-import { renderHooksProvider } from 'utils'
+import { renderHooksProvider } from 'tests/providers'
 import { useThemeDetect } from '..'
 import * as store from 'store/exampleTheme/useExampleTheme'
 
