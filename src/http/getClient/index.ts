@@ -1,4 +1,4 @@
-import { api } from 'libs'
+import { api } from 'adapters'
 import { ErrorApi } from 'types/errorApi'
 import { errorApi } from 'utils'
 import { GetClientType } from './types'
