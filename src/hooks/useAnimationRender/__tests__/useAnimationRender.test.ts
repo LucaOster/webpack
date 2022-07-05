@@ -1,5 +1,5 @@
 import { act } from '@testing-library/react'
-import { renderHooksProvider } from 'utils'
+import { renderHooksProvider } from 'tests/providers'
 import { useAnimationRender } from '..'
 
 describe('[Hooks] useAnimationRender', () => {

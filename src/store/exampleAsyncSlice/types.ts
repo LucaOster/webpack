@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit'
-import { GetClientRepositoriesType } from 'services/repositories/useGetRepositoriesWithRedux/types'
+import { GetClientRepositoriesType } from 'data/repositories/useGetRepositoriesWithRedux/types'
 
 export type GetClientRepositoriesStateType = GetClientRepositoriesType
 

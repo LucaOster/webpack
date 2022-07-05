@@ -11,23 +11,22 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
     'src/index.tsx',
-    'src/app.tsx',
-    'src/pages/index.tsx',
-    'src/components/index.tsx',
-    'src/components/templates/index.tsx',
+    'src/ui/app.tsx',
+    'src/ui/pages/index.tsx',
+    'src/ui/components/index.tsx',
+    'src/ui/components/templates/index.tsx',
+    'src/ui/theme',
+    'src/ui/globalStyles',
+    'src/ui/providers',
+    'src/tests/providers',
     'src/hooks/index.ts',
-    'utils/providers',
-    'src/utils/index.tsx',
+    'src/data',
+    'src/infra',
     'src/assets',
     'src/types',
-    'src/libs',
-    'src/router',
-    'src/services',
-    'src/http',
+    'src/routes',
     'src/store',
-    'src/theme',
-    'src/mocks/index.ts',
-    'src/globalStyles',
+    'src/tests/mocks/index.ts',
     'stories.tsx',
     'types.ts'
   ],
@@ -35,7 +34,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/mocks/svg.ts'
+    '^.+\\.svg$': '<rootDir>/src/tests/mocks/svg.ts'
   },
   transform: {
     '^.+\\.tsx?$': [

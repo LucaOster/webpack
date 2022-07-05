@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import T from 'theme'
+import T from 'ui/theme'
 import { UseWindowSizeType } from './types'
 
 export const getWindowSize = () => {
