@@ -4,7 +4,7 @@ import { useExampleSimple } from 'store/exampleSimple'
 import { useExampleWithPayload } from 'store/exampleWithPayload'
 import * as S from './styles'
 import * as C from 'ui/components'
-import { ReactComponent as IconArrowUp } from 'assets/icons/arrow_up.svg'
+import { ReactComponent as IconArrowUp } from 'ui/assets/icons/arrow_up.svg'
 
 const Home = () => {
   useSetPageTitle({ pageTitle: 'Boilerplate React' })

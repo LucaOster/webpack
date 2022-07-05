@@ -6,7 +6,7 @@
   "author": "Éverton Toffanetto",
   "description": "This application is a boilerplate for complex and large systems, especially those that need to scale with security and code quality.",
   "repository": "https://github.com/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate",
-  "main": "./src/index.js",
+  "main": "./src/ui/index.js",
   "scripts": {
     "dev": "env-cmd -f .env webpack serve --progress --config webpack/webpack.local.js",
     "start": "env-cmd -f .env.prod webpack serve --open --config webpack/webpack.prod.js",
