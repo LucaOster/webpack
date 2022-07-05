@@ -1,6 +1,6 @@
 import { render, RenderResult } from '@testing-library/react'
 import { ReactNode } from 'react'
-import { MainProviders } from 'utils/providers/mainProviders'
+import { MainProviders } from 'ui/providers'
 
 type RenderWithProvidersProps = 'light' | 'dark'
 
