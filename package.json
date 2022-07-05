@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "check-update": "yarn upgrade-interactive --latest",
-    "prepare": "husky install",
+    "prepare": "husky install && chmod ug+x .husky/*",
     "release": "semantic-release"
   },
   "husky": {
