@@ -1,7 +1,7 @@
 import { useExampleAsyncSlice } from 'store/exampleAsyncSlice'
 import { useExampleLoading } from 'store/exampleLoading'
-import { getClient } from 'http/getClient'
-import { GetClientRepositoriesType } from 'services/repositories/useGetRepositoriesWithRedux/types'
+import { getClient } from 'infra/http'
+import { GetClientRepositoriesType } from 'data/repositories/useGetRepositoriesWithRedux/types'
 
 export const useGetRepositoriesWithRedux = () => {
   const { setIsLoading } = useExampleLoading()
