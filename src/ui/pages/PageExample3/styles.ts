@@ -3,6 +3,7 @@ import T from 'ui/theme'
 
 export const Container = styled.main`
   margin: 20px auto;
+  padding: 20px;
 
   ${T.breakpoints.custom(800)} {
     margin: 120px auto;
@@ -15,7 +16,6 @@ export const BtnGroup = styled.div`
   max-width: 35rem;
   gap: ${T.grid.gutter};
   margin: ${T.spacings.xtreme} auto 0 auto;
-  padding: 0 ${T.spacings.large};
 
   .btn {
     opacity: 0;

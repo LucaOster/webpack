@@ -8,7 +8,7 @@ import * as store from 'store/exampleLoading/useExampleLoading'
 
 let mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice1
 
-jest.mock('services', () => ({
+jest.mock('data', () => ({
   useGetRepositoriesWithRedux: () => mockedUseExampleAsyncSlice
 }))
 
