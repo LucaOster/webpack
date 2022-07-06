@@ -22,7 +22,7 @@ module.exports = {
     'src/hooks/index.ts',
     'src/data',
     'src/infra',
-    'src/assets',
+    'src/ui/assets',
     'src/types',
     'src/routes',
     'src/store',
