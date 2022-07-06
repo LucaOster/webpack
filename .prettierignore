@@ -1,4 +1,4 @@
-src/assets/*
+src/ui/assets/*
 .jest
 .storybook
 dist
