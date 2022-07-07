@@ -1,15 +1,17 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'tests/providers'
 import Home from '..'
 import { mockedUseNavigate } from 'tests/mocks'
 
 describe('[Page] Home', () => {
+  const user = userEvent.setup({ delay: null })
+
   beforeEach(() => {
     mockedUseNavigate.mockClear()
   })
 
-  it('should alternate the text displayed in two h1 each time the button is clicked', () => {
+  it('should alternate the text displayed in two h1 each time the button is clicked', async () => {
     renderWithProviders(<Home />)
 
     const btn = screen.getByRole('button', { name: 'Change Global State' })
@@ -23,7 +25,7 @@ describe('[Page] Home', () => {
     expect(titleSectionStateExample1).toBeInTheDocument()
     expect(titleSectionPayload1).toBeInTheDocument()
 
-    fireEvent.click(btn)
+    await user.click(btn)
 
     const titleSectionStateExample2 = screen.getByRole('heading', {
       name: 'Redux Example State: true'
@@ -35,7 +37,7 @@ describe('[Page] Home', () => {
     expect(titleSectionStateExample2).toBeInTheDocument()
     expect(titleSectionPayload2).toBeInTheDocument()
 
-    fireEvent.click(btn)
+    await user.click(btn)
 
     const titleSectionStateExample3 = screen.getByRole('heading', {
       name: 'Redux Example State: false'
@@ -55,15 +57,15 @@ describe('[Page] Home', () => {
   ]
 
   dataTests.forEach(({ buttonNumber }) => {
-    it(`should go to another page by clicking the button ${buttonNumber} and it should preload the next page with the onMouseEnter event`, () => {
+    it(`should go to another page by clicking the button ${buttonNumber} and it should preload the next page with the onMouseEnter event`, async () => {
       renderWithProviders(<Home />)
 
       const btn = screen.getByRole('button', {
         name: `Page Example ${buttonNumber}`
       })
 
-      fireEvent.click(btn)
-      userEvent.hover(btn)
+      await user.click(btn)
+      await user.hover(btn)
 
       expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
       expect(mockedUseNavigate).toHaveBeenCalledWith(
@@ -72,19 +74,19 @@ describe('[Page] Home', () => {
     })
   })
 
-  it('should toggle the button text on click', () => {
+  it('should toggle the button text on click', async () => {
     renderWithProviders(<Home />)
 
     const btnTheme = screen.getByRole('button', { name: /theme/i })
 
     expect(btnTheme).toHaveTextContent('Theme dark')
 
-    fireEvent.click(btnTheme)
+    await user.click(btnTheme)
 
     expect(btnTheme).toHaveTextContent('Theme light')
   })
 
-  it('should toggle the attribute theme value in the body when clicking the button', () => {
+  it('should toggle the attribute theme value in the body when clicking the button', async () => {
     document.body.setAttribute('data-theme', 'light')
     renderWithProviders(<Home />)
 
@@ -95,7 +97,7 @@ describe('[Page] Home', () => {
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ).toBeFalsy()
 
-    fireEvent.click(btnTheme)
+    await user.click(btnTheme)
 
     expect(document.body.dataset.theme).toBe('light')
     expect(

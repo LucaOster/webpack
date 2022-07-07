@@ -5,15 +5,15 @@ import PageExample2 from '..'
 import { mockedUseNavigate } from 'tests/mocks'
 
 describe('[Page] PageExample2', () => {
-  it('should go to another page by clicking the button', () => {
-    const user = userEvent.setup({ skipHover: true })
+  it('should go to another page by clicking the button', async () => {
+    const user = userEvent.setup({ delay: null, skipHover: true })
 
     renderWithProviders(<PageExample2 />)
 
     const btn = screen.getByRole('button', { name: 'Return' })
 
-    user.click(btn)
-    userEvent.hover(btn)
+    await user.click(btn)
+    await user.hover(btn)
 
     expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
     expect(mockedUseNavigate).toHaveBeenCalledWith('/')

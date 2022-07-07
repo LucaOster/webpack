@@ -1,9 +1,11 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'tests/providers'
 import Button from '..'
 
 describe('[Component] Button', () => {
-  it('should call a function once on click on the button', () => {
+  it('should call a function once on click on the button', async () => {
+    const user = userEvent.setup({ delay: null })
     const onClick = jest.fn()
 
     renderWithProviders(
@@ -16,8 +18,7 @@ describe('[Component] Button', () => {
     )
 
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-
-    fireEvent.click(btn)
+    await user.click(btn)
 
     expect(onClick).toHaveBeenCalled()
     expect(onClick).toHaveBeenCalledTimes(1)
