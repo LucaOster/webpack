@@ -251,7 +251,7 @@ yarn release
   - In the root of the components folder, an export index was created to facilitate the use of components with named import. In this way, to use a component just import it as an object and use it with the prefix "C", thus avoiding several unnecessary lines of imports:
 
     ```jsx
-    import * as C from 'components'
+    import * as C from 'ui/components'
 
     ...
     <C.Card>

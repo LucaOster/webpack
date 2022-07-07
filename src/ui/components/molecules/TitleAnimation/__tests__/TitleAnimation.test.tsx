@@ -1,4 +1,5 @@
-import { act, fireEvent, screen } from '@testing-library/react'
+import { act, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'tests/providers'
 import TitleAnimation from '..'
 
@@ -9,7 +10,9 @@ describe('[Component] TitleAnimation', () => {
     })
   })
 
-  it('should render a heading by clicking the button', () => {
+  it('should render a heading by clicking the button', async () => {
+    const user = userEvent.setup({ delay: null })
+
     renderWithProviders(<TitleAnimation />)
 
     const button = screen.getByRole('button')
@@ -20,7 +23,7 @@ describe('[Component] TitleAnimation', () => {
       })
     ).not.toBeInTheDocument()
 
-    fireEvent.click(button)
+    await user.click(button)
 
     jest.advanceTimersByTime(200)
 
@@ -30,7 +33,7 @@ describe('[Component] TitleAnimation', () => {
       })
     ).toBeInTheDocument()
 
-    fireEvent.click(button)
+    await user.click(button)
 
     expect(
       screen.queryByRole('heading', {

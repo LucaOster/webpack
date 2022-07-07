@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'tests/providers'
 import PageExample3 from '..'
@@ -18,9 +18,10 @@ const verifyCall = jest.spyOn(
 )
 
 describe('[Page] PageExample3', () => {
+  const user = userEvent.setup({ delay: null })
   afterEach(() => jest.clearAllMocks())
 
-  it('should render list of repositories when clicking "Search Repository" button if user in text field exists and if isLoading is false', () => {
+  it('should render list of repositories when clicking "Search Repository" button if user in text field exists and if isLoading is false', async () => {
     renderWithProviders(<PageExample3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
@@ -28,21 +29,21 @@ describe('[Page] PageExample3', () => {
     const repositoryListText2 = screen.getByText('example2')
     const input = screen.getByRole('textbox')
 
-    fireEvent.input(input, { target: { value: 'everton-dgn' } })
-    fireEvent.click(btn)
+    await user.type(input, 'everton-dgn')
+    await user.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(1)
     expect(repositoryListText1).toBeInTheDocument()
     expect(repositoryListText2).toBeInTheDocument()
   })
 
-  it('should go to another page by clicking the button', () => {
+  it('should go to another page by clicking the button', async () => {
     renderWithProviders(<PageExample3 />)
 
     const btn = screen.getByRole('button', { name: 'Return' })
 
-    fireEvent.click(btn)
-    userEvent.hover(btn)
+    await user.click(btn)
+    await user.hover(btn)
 
     expect(mockedUseNavigate).toHaveBeenCalledTimes(1)
     expect(mockedUseNavigate).toHaveBeenCalledWith('/')
@@ -68,7 +69,7 @@ describe('[Page] PageExample3', () => {
     spy.mockRestore()
   })
 
-  it('should render error message to clicking "Search Repository" button if user in text field not exists and if isLoading is false', () => {
+  it('should render error message to clicking "Search Repository" button if user in text field not exists and if isLoading is false', async () => {
     mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice2
 
     renderWithProviders(<PageExample3 />)
@@ -79,8 +80,8 @@ describe('[Page] PageExample3', () => {
     const repositoryListText2 = screen.queryByText('example2')
     const input = screen.getByRole('textbox')
 
-    fireEvent.input(input, { target: { value: 'everton-dgn' } })
-    fireEvent.click(btn)
+    await user.type(input, 'everton-dgn')
+    await user.click(btn)
 
     expect(error).toBeInTheDocument()
     expect(verifyCall).toHaveBeenCalledTimes(1)
@@ -88,7 +89,7 @@ describe('[Page] PageExample3', () => {
     expect(repositoryListText2).not.toBeInTheDocument()
   })
 
-  it('should not take any action if the text input is empty', () => {
+  it('should not take any action if the text input is empty', async () => {
     renderWithProviders(<PageExample3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
@@ -96,7 +97,7 @@ describe('[Page] PageExample3', () => {
     const repositoryListText1 = screen.queryByText('example1')
     const repositoryListText2 = screen.queryByText('example2')
 
-    userEvent.click(btn)
+    await user.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(0)
     expect(repositoryListText1).not.toBeInTheDocument()
