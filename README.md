@@ -5,6 +5,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
 ![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
 ![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=orange&style=plastic)
+[![Known Vulnerabilities](https://snyk.io/test/github/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate/badge.svg)](https://snyk.io/test/github/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate)
 ![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release&style=plastic)
 
 </div>
