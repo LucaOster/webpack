@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetPageTitle } from 'hooks'
 import { useGetRepositoriesWithRedux } from 'data'
-import { useExampleLoading } from 'store/exampleLoading'
+import { useExampleLoading } from 'infra/store/exampleLoading'
 import * as S from './styles'
 import * as C from 'ui/components'
 

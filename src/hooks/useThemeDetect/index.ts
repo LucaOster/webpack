@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react'
-import { useExampleTheme } from 'store/exampleTheme'
+import { useExampleTheme } from 'infra/store/exampleTheme'
 
 export const useThemeDetect = () => {
   const {
