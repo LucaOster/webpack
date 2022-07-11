@@ -4,7 +4,7 @@ import { renderWithProviders } from 'tests/providers'
 import PageExample3 from '..'
 import { mockedUseNavigate } from 'tests/mocks'
 import * as mock from 'ui/pages/PageExample3/mocks/mockedUseExampleAsyncSlice'
-import * as store from 'store/exampleLoading/useExampleLoading'
+import * as store from 'infra/store/exampleLoading/useExampleLoading'
 
 let mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice1
 

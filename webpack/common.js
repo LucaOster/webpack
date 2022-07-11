@@ -17,7 +17,7 @@ const styledComponentsOptions = {
 
 module.exports = env => ({
   mode: env.mode,
-  entry: './src/ui/index',
+  entry: './src/main/index',
   devtool: 'source-map',
   output: {
     clean: true,

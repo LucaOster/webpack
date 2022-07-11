@@ -1,7 +1,7 @@
 import { GlobalStyles } from 'ui/globalStyles'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import { persistor, store } from 'store/configStore'
+import { persistor, store } from 'infra/store/configStore'
 import * as C from 'ui/components'
 import { ThemeProviders } from '../themeProviders'
 import { MainProvidersProps } from './types'

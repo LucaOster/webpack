@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react'
 import { renderHooksProvider } from 'tests/providers'
 import { useThemeDetect } from '..'
-import * as store from 'store/exampleTheme/useExampleTheme'
+import * as store from 'infra/store/exampleTheme/useExampleTheme'
 
 const mockedUseExampleTheme = {
   isPrefersColorSchemeDark: true,

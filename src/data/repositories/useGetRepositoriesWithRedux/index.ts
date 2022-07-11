@@ -1,5 +1,5 @@
-import { useExampleAsyncSlice } from 'store/exampleAsyncSlice'
-import { useExampleLoading } from 'store/exampleLoading'
+import { useExampleAsyncSlice } from 'infra/store/exampleAsyncSlice'
+import { useExampleLoading } from 'infra/store/exampleLoading'
 import { getClient } from 'infra/http'
 import { GetClientRepositoriesType } from 'data/repositories/useGetRepositoriesWithRedux/types'
 
