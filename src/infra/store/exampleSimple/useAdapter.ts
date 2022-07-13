@@ -1,7 +1,7 @@
 import { useTypedDispatch, useTypedSelector } from '../useHelpers'
 import { setChangeExample } from './slice'
 
-export const useExampleSimple = () => {
+export const useExampleSimpleAdapter = () => {
   const dispatch = useTypedDispatch()
 
   const state = {

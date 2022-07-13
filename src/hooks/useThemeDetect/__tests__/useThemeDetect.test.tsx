@@ -1,7 +1,7 @@
 import { act } from '@testing-library/react'
 import { renderHooksProvider } from 'tests/providers'
 import { useThemeDetect } from '..'
-import * as store from 'infra/store/exampleTheme/useExampleTheme'
+import * as store from 'infra/store/exampleTheme/useAdapter'
 
 const mockedUseExampleTheme = {
   isPrefersColorSchemeDark: true,
@@ -35,7 +35,7 @@ describe('[Hooks] useThemeDetect', () => {
   })
 
   it('should start in light theme with data-theme="light" attribute in body, if isPrefersColorSchemeDark is false and return dark text in showThemeToSelect', () => {
-    jest.spyOn(store, 'useExampleTheme').mockReturnValue({
+    jest.spyOn(store, 'useExampleThemeAdapter').mockReturnValue({
       ...mockedUseExampleTheme,
       isPrefersColorSchemeDark: false,
       isDarkMode: false
@@ -48,7 +48,7 @@ describe('[Hooks] useThemeDetect', () => {
   })
 
   it('should start in dark theme with data-theme="dark" attribute in body, if isPrefersColorSchemeDark is true and return light text in showThemeToSelect', () => {
-    jest.spyOn(store, 'useExampleTheme').mockReturnValue({
+    jest.spyOn(store, 'useExampleThemeAdapter').mockReturnValue({
       ...mockedUseExampleTheme,
       isDarkMode: false
     })
@@ -60,7 +60,9 @@ describe('[Hooks] useThemeDetect', () => {
   })
 
   it('should switch theme between dark and light when isPrefersColorScheme is true when calling setTheme and toggle data-theme attribute in body', () => {
-    jest.spyOn(store, 'useExampleTheme').mockReturnValue(mockedUseExampleTheme)
+    jest
+      .spyOn(store, 'useExampleThemeAdapter')
+      .mockReturnValue(mockedUseExampleTheme)
 
     const { result } = renderHooksProvider(() => useThemeDetect())
 

@@ -1,16 +1,16 @@
 import { useNavigate } from 'react-router-dom'
 import { useSetPageTitle, useThemeDetect } from 'hooks'
-import { useExampleSimple } from 'infra/store/exampleSimple'
-import { useExampleWithPayload } from 'infra/store/exampleWithPayload'
+import { useExampleSimpleAdapter } from 'infra/store/exampleSimple/useAdapter'
+import { useExampleWithPayloadAdapter } from 'infra/store/exampleWithPayload/useAdapter'
 import * as S from './styles'
 import * as C from 'ui/components'
 import { ReactComponent as IconArrowUp } from 'ui/assets/icons/arrow_up.svg'
 
 const Home = () => {
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
-  const { isExampleSimple, setChangeExample } = useExampleSimple()
+  const { isExampleSimple, setChangeExample } = useExampleSimpleAdapter()
   const { exampleWithPayload, setAddText, setRemoveText } =
-    useExampleWithPayload()
+    useExampleWithPayloadAdapter()
   const { setTheme, showThemeToSelect } = useThemeDetect()
   const navigate = useNavigate()
 
