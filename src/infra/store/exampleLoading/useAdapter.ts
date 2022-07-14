@@ -1,7 +1,7 @@
 import { useTypedDispatch, useTypedSelector } from '../useHelpers'
 import { setIsLoading } from './slice'
 
-export const useExampleLoading = () => {
+export const useExampleLoadingAdapter = () => {
   const dispatch = useTypedDispatch()
 
   const state = {

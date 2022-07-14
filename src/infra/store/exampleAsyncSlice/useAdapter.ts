@@ -2,7 +2,7 @@ import { GetClientRepositoriesStateType } from './types'
 import { useTypedDispatch, useTypedSelector } from '../useHelpers'
 import { setGetRepositories } from './slice'
 
-export const useExampleAsyncSlice = () => {
+export const useExampleAsyncAdapter = () => {
   const dispatch = useTypedDispatch()
 
   const state = {

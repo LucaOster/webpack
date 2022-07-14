@@ -4,7 +4,7 @@ import { renderWithProviders } from 'tests/providers'
 import PageExample3 from '..'
 import { mockedUseNavigate } from 'tests/mocks'
 import * as mock from 'ui/pages/PageExample3/mocks/mockedUseExampleAsyncSlice'
-import * as store from 'infra/store/exampleLoading/useExampleLoading'
+import * as store from 'infra/store/exampleLoading/useAdapter'
 
 let mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice1
 
@@ -51,7 +51,7 @@ describe('[Page] PageExample3', () => {
 
   it('should render loading when clicking "Search Repository" button while isLoading for true', () => {
     mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice3
-    const spy = jest.spyOn(store, 'useExampleLoading').mockReturnValue({
+    const spy = jest.spyOn(store, 'useExampleLoadingAdapter').mockReturnValue({
       isLoading: true,
       setIsLoading: jest.fn()
     })

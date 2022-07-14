@@ -2,7 +2,7 @@ import { useTypedDispatch, useTypedSelector } from '../useHelpers'
 import { setRemoveText, setAddText } from './slice'
 import { ExemploTextProp } from './types'
 
-export const useExampleWithPayload = () => {
+export const useExampleWithPayloadAdapter = () => {
   const dispatch = useTypedDispatch()
 
   const state = {

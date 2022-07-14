@@ -1,21 +1,22 @@
 import { useNavigate } from 'react-router-dom'
-import { useSetPageTitle, useThemeDetect } from 'hooks'
-import { useExampleSimple } from 'infra/store/exampleSimple'
-import { useExampleWithPayload } from 'infra/store/exampleWithPayload'
+import { useSetPageTitle, useStorage, useThemeDetect } from 'hooks'
+import { useExampleWithPayloadAdapter } from 'infra/store/exampleWithPayload/useAdapter'
 import * as S from './styles'
 import * as C from 'ui/components'
 import { ReactComponent as IconArrowUp } from 'ui/assets/icons/arrow_up.svg'
 
 const Home = () => {
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
-  const { isExampleSimple, setChangeExample } = useExampleSimple()
+  const { getStorage, setStorageState } = useStorage({
+    key: 'isExampleSimple'
+  })
   const { exampleWithPayload, setAddText, setRemoveText } =
-    useExampleWithPayload()
+    useExampleWithPayloadAdapter()
   const { setTheme, showThemeToSelect } = useThemeDetect()
   const navigate = useNavigate()
 
   const handleChange = (): void => {
-    setChangeExample()
+    setStorageState(!getStorage)
 
     exampleWithPayload
       ? setRemoveText()
@@ -34,7 +35,7 @@ const Home = () => {
 
       <h1>
         Redux Example State:
-        {isExampleSimple ? ' true' : ' false'}
+        {getStorage ? ' true' : ' false'}
       </h1>
 
       <br />

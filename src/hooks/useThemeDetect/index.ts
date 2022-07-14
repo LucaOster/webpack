@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react'
-import { useExampleTheme } from 'infra/store/exampleTheme'
+import { useExampleThemeAdapter } from 'infra/store/exampleTheme/useAdapter'
 
 export const useThemeDetect = () => {
   const {
@@ -9,7 +9,7 @@ export const useThemeDetect = () => {
     setIsPrefersColorSchemeDark,
     setChangeTheme,
     setIsPrefersColorScheme
-  } = useExampleTheme()
+  } = useExampleThemeAdapter()
 
   useEffect(
     function setPrefersColorScheme() {
