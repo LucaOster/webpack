@@ -5,7 +5,7 @@ import { useStorageProps } from './types'
 export const useStorage = ({ key, initialValue, storage }: useStorageProps) => {
   const { getStorageAdapter, setStorageAdapter } = storageAdapter(storage)
   const [getStorage, setStorage] = useState(
-    initialValue ?? getStorageAdapter(key, initialValue)
+    getStorageAdapter(key, initialValue) ?? initialValue
   )
 
   const setStorageState = (value: any): void => {

@@ -8,7 +8,8 @@ import { ReactComponent as IconArrowUp } from 'ui/assets/icons/arrow_up.svg'
 const Home = () => {
   useSetPageTitle({ pageTitle: 'Boilerplate React' })
   const { getStorage, setStorageState } = useStorage({
-    key: 'isExampleSimple'
+    key: 'isExampleSimple',
+    initialValue: false
   })
   const { exampleWithPayload, setAddText, setRemoveText } =
     useExampleWithPayloadAdapter()
