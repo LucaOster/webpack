@@ -22,7 +22,6 @@ module.exports = {
     'src/tests/providers/',
     'src/hooks/index.ts',
     'src/data/',
-    'src/infra/adapters/index.ts',
     'src/infra/adapters/httpClient/',
     'src/infra/http/',
     'src/infra/store/',
