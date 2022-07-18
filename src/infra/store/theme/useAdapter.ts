@@ -5,17 +5,17 @@ import {
   setIsPrefersColorSchemeDark
 } from './slice'
 
-export const useExampleThemeAdapter = () => {
+export const useTheme = () => {
   const dispatch = useTypedDispatch()
 
   const state = {
     isPrefersColorSchemeDark: useTypedSelector(
-      state => state.exampleTheme.isPrefersColorSchemeDark
+      state => state.theme.isPrefersColorSchemeDark
     ),
     isPrefersColorScheme: useTypedSelector(
-      state => state.exampleTheme.isPrefersColorScheme
+      state => state.theme.isPrefersColorScheme
     ),
-    isDarkMode: useTypedSelector(state => state.exampleTheme.isDark)
+    isDarkMode: useTypedSelector(state => state.theme.isDark)
   }
 
   const setState = {

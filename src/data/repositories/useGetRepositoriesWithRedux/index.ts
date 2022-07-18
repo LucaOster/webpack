@@ -1,10 +1,10 @@
 import { useExampleAsyncAdapter } from 'infra/store/exampleAsyncSlice/useAdapter'
-import { useExampleLoadingAdapter } from 'infra/store/exampleLoading/useAdapter'
+import { useIsLoading } from 'infra/store/isLoading/useAdapter'
 import { getClient } from 'infra/http'
 import { GetClientRepositoriesType } from './types'
 
 export const useGetRepositoriesWithRedux = () => {
-  const { setIsLoading } = useExampleLoadingAdapter()
+  const { setIsLoading } = useIsLoading()
   const { exampleAsyncSlice, setGetRepositories } = useExampleAsyncAdapter()
 
   const getFetchRepositories = async (user: string) => {

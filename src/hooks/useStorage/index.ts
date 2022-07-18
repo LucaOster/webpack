@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { storageAdapter } from 'infra/storageAdapter'
+import { storageAdapter } from 'infra/adapters/storage'
 import { useStorageProps } from './types'
 
 export const useStorage = ({ key, initialValue, storage }: useStorageProps) => {

@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { ExampleThemeType } from './types'
+import { ThemeType } from './types'
 
-const initialState: ExampleThemeType = {
+const initialState: ThemeType = {
   isPrefersColorSchemeDark: false,
   isPrefersColorScheme: true,
   isDark: false
 }
 
-const exampleThemeSlice = createSlice({
-  name: 'exampleTheme',
+const themeSlice = createSlice({
+  name: 'theme',
   initialState,
   reducers: {
     setIsPrefersColorSchemeDark(state) {
@@ -30,6 +30,6 @@ export const {
   setIsPrefersColorSchemeDark,
   setChangeTheme,
   setIsPrefersColorScheme
-} = exampleThemeSlice.actions
+} = themeSlice.actions
 
-export const exampleTheme = exampleThemeSlice.reducer
+export const theme = themeSlice.reducer
