@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetPageTitle } from 'hooks'
 import { useGetRepositoriesWithRedux } from 'data'
-import { useExampleLoadingAdapter } from 'infra/store/exampleLoading/useAdapter'
+import { useIsLoading } from 'infra/store/isLoading/useAdapter'
 import * as S from './styles'
 import * as C from 'ui/components'
 
@@ -12,7 +12,7 @@ const PageExample3 = () => {
   const refInput = useRef<HTMLInputElement>(null)
   const { getFetchRepositories, exampleAsyncSlice } =
     useGetRepositoriesWithRedux()
-  const { isLoading } = useExampleLoadingAdapter()
+  const { isLoading } = useIsLoading()
 
   const searchRepositories = useCallback(async () => {
     const user = refInput.current?.value

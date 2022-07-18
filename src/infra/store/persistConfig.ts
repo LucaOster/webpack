@@ -11,7 +11,7 @@ import {
 import asyncSessionStorage from 'redux-persist/lib/storage'
 import * as Reducers from './reducers'
 
-const whitelist = ['exampleWithPayload', 'exampleTheme']
+const whitelist = ['exampleWithPayload', 'theme']
 
 const persistConfig = {
   key: 'root',
