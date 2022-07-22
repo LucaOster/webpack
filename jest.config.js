@@ -26,7 +26,7 @@ module.exports = {
     'src/infra/http/',
     'src/infra/store/',
     'src/types/',
-    'src/tests/mocks/index.ts',
+    'src/testHelpers/',
     'stories.tsx',
     'types.ts'
   ],
@@ -34,7 +34,7 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/tests/mocks/svg.ts'
+    '^.+\\.svg$': '<rootDir>/src/testHelpers/mocks/svg.ts'
   },
   transform: {
     '^.+\\.tsx?$': [

@@ -11,16 +11,16 @@ const RoutesWrapper = () => (
       </Route>
 
       <Route path="/" element={<C.ExampleTemplate />}>
-        <Route path="page-example-1" element={<Pages.PageExample1 />} />
-        <Route path="page-example-2" element={<Pages.PageExample2 />} />
-        <Route path="page-example-3" element={<Pages.PageExample4 />} />
+        <Route path="page-example-1" element={<Pages.Example1 />} />
+        <Route path="page-example-2" element={<Pages.Example2 />} />
+        <Route path="page-example-3" element={<Pages.Example4 />} />
       </Route>
 
       <Route
         path="*"
         element={
           <C.ErrorTemplate>
-            <Pages.PageError />
+            <Pages.Error />
           </C.ErrorTemplate>
         }
       />

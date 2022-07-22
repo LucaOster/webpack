@@ -1,7 +1,7 @@
 import { useSetPageTitle } from 'hooks'
 import * as S from './styles'
 
-const PageError = () => {
+const Error = () => {
   useSetPageTitle({ pageTitle: 'Error Page' })
 
   return (
@@ -11,4 +11,4 @@ const PageError = () => {
   )
 }
 
-export default PageError
+export default Error
