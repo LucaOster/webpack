@@ -3,7 +3,7 @@ import { useSetPageTitle } from 'hooks'
 import * as S from './styles'
 import * as C from 'ui/components'
 
-const PageExample1 = () => {
+const Example1 = () => {
   useSetPageTitle({ pageTitle: 'Page Example 1' })
   const navigate = useNavigate()
 
@@ -30,4 +30,4 @@ const PageExample1 = () => {
   )
 }
 
-export default PageExample1
+export default Example1

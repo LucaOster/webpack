@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
+import { renderWithProviders } from 'testHelpers/providers'
 import Example from '..'
-import { renderWithProviders } from 'tests/providers'
 
 describe('[Template] Example', () => {
   it('should render a children', () => {

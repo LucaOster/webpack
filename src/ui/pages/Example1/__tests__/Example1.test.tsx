@@ -1,14 +1,14 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
-import PageExample2 from '..'
-import { mockedUseNavigate } from 'tests/mocks'
+import { renderWithProviders } from 'testHelpers/providers'
+import { mockedUseNavigate } from 'testHelpers/mocks'
+import Example1 from '..'
 
-describe('[Page] PageExample2', () => {
+describe('[Page] PageExample1', () => {
   it('should go to another page by clicking the button', async () => {
-    const user = userEvent.setup({ delay: null, skipHover: true })
+    const user = userEvent.setup({ delay: null })
 
-    renderWithProviders(<PageExample2 />)
+    renderWithProviders(<Example1 />)
 
     const btn = screen.getByRole('button', { name: 'Return' })
 

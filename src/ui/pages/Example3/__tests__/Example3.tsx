@@ -1,9 +1,9 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'tests/providers'
-import PageExample3 from '..'
-import { mockedUseNavigate } from 'tests/mocks'
-import * as mock from 'ui/pages/PageExample3/mocks/mockedUseExampleAsyncSlice'
+import { renderWithProviders } from 'testHelpers/providers'
+import { mockedUseNavigate } from 'testHelpers/mocks'
+import Example3 from '..'
+import * as mock from 'ui/pages/Example3/mocks/mockedUseExampleAsyncSlice'
 import * as store from 'infra/store/isLoading/useAdapter'
 
 let mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice1
@@ -17,12 +17,12 @@ const verifyCall = jest.spyOn(
   'getFetchRepositories'
 )
 
-describe('[Page] PageExample3', () => {
+describe('[Page] Example3', () => {
   const user = userEvent.setup({ delay: null })
   afterEach(() => jest.clearAllMocks())
 
   it('should render list of repositories when clicking "Search Repository" button if user in text field exists and if isLoading is false', async () => {
-    renderWithProviders(<PageExample3 />)
+    renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
     const repositoryListText1 = screen.getByText('example1')
@@ -38,7 +38,7 @@ describe('[Page] PageExample3', () => {
   })
 
   it('should go to another page by clicking the button', async () => {
-    renderWithProviders(<PageExample3 />)
+    renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: 'Return' })
 
@@ -56,7 +56,7 @@ describe('[Page] PageExample3', () => {
       setIsLoading: jest.fn()
     })
 
-    renderWithProviders(<PageExample3 />)
+    renderWithProviders(<Example3 />)
 
     const loading = screen.getByRole('heading', { name: 'loading...' })
     const repositoryListText1 = screen.queryByText('example1')
@@ -72,7 +72,7 @@ describe('[Page] PageExample3', () => {
   it('should render error message to clicking "Search Repository" button if user in text field not exists and if isLoading is false', async () => {
     mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice2
 
-    renderWithProviders(<PageExample3 />)
+    renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
     const error = screen.getByText(/not found/i)
@@ -90,7 +90,7 @@ describe('[Page] PageExample3', () => {
   })
 
   it('should not take any action if the text input is empty', async () => {
-    renderWithProviders(<PageExample3 />)
+    renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
     const error = screen.getByText(/not found/i)

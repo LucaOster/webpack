@@ -6,7 +6,7 @@ import { useIsLoading } from 'infra/store/isLoading/useAdapter'
 import * as S from './styles'
 import * as C from 'ui/components'
 
-const PageExample3 = () => {
+const Example3 = () => {
   useSetPageTitle({ pageTitle: 'Page Example 4' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
@@ -14,10 +14,11 @@ const PageExample3 = () => {
     useGetRepositoriesWithRedux()
   const { isLoading } = useIsLoading()
 
-  const searchRepositories = useCallback(async () => {
-    const user = refInput.current?.value
-    if (user) await getFetchRepositories(user)
-  }, [getFetchRepositories])
+  const searchRepositories: () => Promise<void> =
+    useCallback(async (): Promise<void> => {
+      const user: string | undefined = refInput.current?.value
+      if (user) await getFetchRepositories(user)
+    }, [getFetchRepositories])
 
   if (isLoading) return <h1>loading...</h1>
 
@@ -69,4 +70,4 @@ const PageExample3 = () => {
   )
 }
 
-export default PageExample3
+export default Example3
