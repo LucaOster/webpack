@@ -1,5 +1,5 @@
 import { ERROR_MESSAGE } from 'constants/errorApi'
-import { ErrorApi } from 'types/errorApi'
+import { ErrorApi } from 'infra/adapters/httpClient/types'
 
 export const errorApi = (e: ErrorApi): string => {
   const errorCode = e.response?.status
