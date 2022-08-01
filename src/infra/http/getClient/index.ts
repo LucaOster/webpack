@@ -1,7 +1,7 @@
-import { httpClientAdapter } from 'infra/adapters/httpClient'
-import { ErrorApi } from 'types/errorApi'
 import { errorApi } from 'data'
+import { httpClientAdapter } from 'infra/adapters/httpClient'
 import { GetClientType } from './types'
+import { ErrorApi } from 'infra/adapters/httpClient/types'
 
 export const getClient = async (url: string): Promise<GetClientType> => {
   try {
