@@ -104,7 +104,7 @@ In addition to being constantly updated, this project was configured in the smal
 
   - [x] animation in the assembly and disassembly of components;
   - [x] conditional rendering of components by breakpoints;
-  - [x] dark/light theme change and detection of prefers-color-scheme;
+  - [x] dark/light theme;
   - [x] set page title dynamically;
 
 - [x] Theme created with styled-components without using a provider and no need to access theme properties with arrow functions;
@@ -114,8 +114,6 @@ In addition to being constantly updated, this project was configured in the smal
 - [x] Store data persistence in localStorage;
 
 - [x] 100% coverage in tests including: components, templates, pages and hooks;
-
-- [x] Theme Dark/Light without provider;
 
 - [x] Detection prefers-reduced-motion;
 

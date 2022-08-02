@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSetPageTitle } from 'hooks'
 import { useGetRepositoriesWithRedux } from 'data'
@@ -7,18 +7,23 @@ import * as S from './styles'
 import * as C from 'ui/components'
 
 const Example3 = () => {
+  const [disabledButton, setDisabledButton] = useState(true)
   useSetPageTitle({ pageTitle: 'Page Example 4' })
   const navigate = useNavigate()
   const refInput = useRef<HTMLInputElement>(null)
+  const user = (): string | undefined => refInput.current?.value?.trim()
   const { getFetchRepositories, exampleAsyncSlice } =
     useGetRepositoriesWithRedux()
   const { isLoading } = useIsLoading()
 
   const searchRepositories: () => Promise<void> =
     useCallback(async (): Promise<void> => {
-      const user: string | undefined = refInput.current?.value
-      if (user) await getFetchRepositories(user)
+      if (user()) await getFetchRepositories(user()!)
     }, [getFetchRepositories])
+
+  const handleChecksIfFieldIsEmpty = (): void => {
+    if (!!user() === disabledButton) setDisabledButton(prevState => !prevState)
+  }
 
   if (isLoading) return <h1>loading...</h1>
 
@@ -44,6 +49,7 @@ const Example3 = () => {
         ref={refInput}
         name="searchRepositoriesInTheGithub"
         placeholder="User name"
+        onChange={handleChecksIfFieldIsEmpty}
       />
       <S.BtnGroup>
         <C.Button
@@ -54,6 +60,7 @@ const Example3 = () => {
           className="btn"
           aria-label="Search Repositories"
           onClick={searchRepositories}
+          disabled={disabledButton}
         />
 
         <C.Button

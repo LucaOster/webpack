@@ -11,15 +11,12 @@ describe('[Component] ErrorBoundary', () => {
     const spy = jest
       .spyOn(console, 'error')
       .mockImplementation(() => ({ message: '' }))
-
     renderWithProviders(
       <ErrorBoundary>
         <ChildWithError />
       </ErrorBoundary>
     )
-
     expect(screen.getByText('Something went wrong.')).toBeInTheDocument()
-
     spy.mockRestore()
   })
 })

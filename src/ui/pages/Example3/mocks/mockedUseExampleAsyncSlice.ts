@@ -1,4 +1,4 @@
-const getFetchRepositories = jest.fn()
+export const getFetchRepositories = jest.fn()
 export const useExampleAsyncSlice1 = {
   getFetchRepositories,
   exampleAsyncSlice: {

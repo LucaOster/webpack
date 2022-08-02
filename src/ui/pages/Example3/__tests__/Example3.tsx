@@ -7,11 +7,9 @@ import * as mock from 'ui/pages/Example3/mocks/mockedUseExampleAsyncSlice'
 import * as store from 'infra/store/isLoading/useAdapter'
 
 let mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice1
-
 jest.mock('data', () => ({
   useGetRepositoriesWithRedux: () => mockedUseExampleAsyncSlice
 }))
-
 const verifyCall = jest.spyOn(
   mockedUseExampleAsyncSlice,
   'getFetchRepositories'
@@ -21,6 +19,49 @@ describe('[Page] Example3', () => {
   const user = userEvent.setup({ delay: null })
   afterEach(() => jest.clearAllMocks())
 
+  it('should render initially "Search Repository" button as disabled and enable when there is text in input, should also not call "searchRepositories" when clicked in disabled state', async () => {
+    renderWithProviders(<Example3 />)
+
+    const btn = screen.getByRole('button', { name: /search repositories/i })
+    const input = screen.getByRole('textbox')
+    await user.click(btn)
+
+    expect(btn).toBeDisabled()
+    expect(mock.getFetchRepositories).toHaveBeenCalledTimes(0)
+    await user.type(input, 'any_user')
+    await user.click(btn)
+    expect(btn).toBeEnabled()
+    expect(mock.getFetchRepositories).toHaveBeenCalledTimes(1)
+  })
+
+  it('should render "Search Repository" button as disabled when deleting all characters from input', async () => {
+    renderWithProviders(<Example3 />)
+
+    const btn = screen.getByRole('button', { name: /search repositories/i })
+    const input = screen.getByRole('textbox')
+    await user.type(input, 'any_use')
+
+    expect(btn).toBeEnabled()
+    await user.type(input, 'any_user')
+    expect(btn).toBeEnabled()
+    await user.clear(input)
+    expect(btn).toBeDisabled()
+  })
+
+  it('should keep the "Search Repository" button disabled when typing only spaces', async () => {
+    renderWithProviders(<Example3 />)
+
+    const btn = screen.getByRole('button', { name: /search repositories/i })
+    const input = screen.getByRole('textbox')
+    await user.type(input, ' ')
+
+    expect(btn).toBeDisabled()
+    await user.type(input, '  ')
+    expect(btn).toBeDisabled()
+    await user.clear(input)
+    expect(btn).toBeDisabled()
+  })
+
   it('should render list of repositories when clicking "Search Repository" button if user in text field exists and if isLoading is false', async () => {
     renderWithProviders(<Example3 />)
 
@@ -28,8 +69,7 @@ describe('[Page] Example3', () => {
     const repositoryListText1 = screen.getByText('example1')
     const repositoryListText2 = screen.getByText('example2')
     const input = screen.getByRole('textbox')
-
-    await user.type(input, 'everton-dgn')
+    await user.type(input, 'any_user')
     await user.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(1)
@@ -41,7 +81,6 @@ describe('[Page] Example3', () => {
     renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: 'Return' })
-
     await user.click(btn)
     await user.hover(btn)
 
@@ -55,7 +94,6 @@ describe('[Page] Example3', () => {
       isLoading: true,
       setIsLoading: jest.fn()
     })
-
     renderWithProviders(<Example3 />)
 
     const loading = screen.getByRole('heading', { name: 'loading...' })
@@ -71,7 +109,6 @@ describe('[Page] Example3', () => {
 
   it('should render error message to clicking "Search Repository" button if user in text field not exists and if isLoading is false', async () => {
     mockedUseExampleAsyncSlice = mock.useExampleAsyncSlice2
-
     renderWithProviders(<Example3 />)
 
     const btn = screen.getByRole('button', { name: /search repositories/i })
@@ -79,8 +116,7 @@ describe('[Page] Example3', () => {
     const repositoryListText1 = screen.queryByText('example1')
     const repositoryListText2 = screen.queryByText('example2')
     const input = screen.getByRole('textbox')
-
-    await user.type(input, 'everton-dgn')
+    await user.type(input, 'any_user')
     await user.click(btn)
 
     expect(error).toBeInTheDocument()
@@ -96,7 +132,6 @@ describe('[Page] Example3', () => {
     const error = screen.getByText(/not found/i)
     const repositoryListText1 = screen.queryByText('example1')
     const repositoryListText2 = screen.queryByText('example2')
-
     await user.click(btn)
 
     expect(verifyCall).toHaveBeenCalledTimes(0)

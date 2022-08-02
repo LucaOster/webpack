@@ -10,9 +10,9 @@ describe('[Component] TitleAnimation', () => {
     })
   })
 
-  it('should render a heading by clicking the button', async () => {
-    const user = userEvent.setup({ delay: null })
+  const user = userEvent.setup({ delay: null })
 
+  it('should render a heading by clicking the button', async () => {
     renderWithProviders(<TitleAnimation />)
 
     const button = screen.getByRole('button')
@@ -24,7 +24,6 @@ describe('[Component] TitleAnimation', () => {
     ).not.toBeInTheDocument()
 
     await user.click(button)
-
     jest.advanceTimersByTime(200)
 
     expect(

@@ -26,7 +26,6 @@ describe('[Page] Home', () => {
     expect(titleSectionPayload1).toBeInTheDocument()
 
     await user.click(btn)
-
     const titleSectionStateExample2 = screen.getByRole('heading', {
       name: 'Redux Example State: true'
     })
@@ -38,7 +37,6 @@ describe('[Page] Home', () => {
     expect(titleSectionPayload2).toBeInTheDocument()
 
     await user.click(btn)
-
     const titleSectionStateExample3 = screen.getByRole('heading', {
       name: 'Redux Example State: false'
     })
@@ -55,7 +53,6 @@ describe('[Page] Home', () => {
     { buttonNumber: 2 },
     { buttonNumber: 3 }
   ]
-
   dataTests.forEach(({ buttonNumber }) => {
     it(`should go to another page by clicking the button ${buttonNumber} and it should preload the next page with the onMouseEnter event`, async () => {
       renderWithProviders(<Home />)
@@ -63,7 +60,6 @@ describe('[Page] Home', () => {
       const btn = screen.getByRole('button', {
         name: `Page Example ${buttonNumber}`
       })
-
       await user.click(btn)
       await user.hover(btn)
 
@@ -74,34 +70,15 @@ describe('[Page] Home', () => {
     })
   })
 
-  it('should toggle the button text on click', async () => {
+  it('should toggle button text and data-theme value that tag body when clicking change theme button', async () => {
     renderWithProviders(<Home />)
 
     const btnTheme = screen.getByRole('button', { name: /theme/i })
-
-    expect(btnTheme).toHaveTextContent('Theme dark')
-
-    await user.click(btnTheme)
 
     expect(btnTheme).toHaveTextContent('Theme light')
-  })
-
-  it('should toggle the attribute theme value in the body when clicking the button', async () => {
-    document.body.setAttribute('data-theme', 'light')
-    renderWithProviders(<Home />)
-
-    const btnTheme = screen.getByRole('button', { name: /theme/i })
-
-    expect(document.body.dataset.theme).toBe('dark')
-    expect(
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ).toBeFalsy()
-
-    await user.click(btnTheme)
-
     expect(document.body.dataset.theme).toBe('light')
-    expect(
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ).toBeFalsy()
+    await user.click(btnTheme)
+    expect(btnTheme).toHaveTextContent('Theme dark')
+    expect(document.body.dataset.theme).toBe('dark')
   })
 })
