@@ -13,7 +13,7 @@ const Home = () => {
   })
   const { exampleWithPayload, setAddText, setRemoveText } =
     useExampleWithPayloadAdapter()
-  const { setTheme, showThemeToSelect } = useThemeDetect()
+  const { setTheme, theme } = useThemeDetect()
   const navigate = useNavigate()
 
   const handleChange = (): void => {
@@ -90,8 +90,8 @@ const Home = () => {
           fullWidth={true}
           color="red"
           size="large"
-          text={`Theme ${showThemeToSelect}`}
-          aria-label={`Theme ${showThemeToSelect}`}
+          text={`Theme ${theme}`}
+          aria-label={`Theme ${theme}`}
           className="btn"
           onClick={setTheme}
         />
