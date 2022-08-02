@@ -10,9 +10,7 @@ describe('[Component] Input', () => {
         placeholder="Nome de usuário"
       />
     )
-
     const wrapper = screen.getByRole('textbox')
-
     expect(wrapper).toBeInTheDocument()
   })
 })

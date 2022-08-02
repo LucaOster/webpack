@@ -4,10 +4,10 @@ import { renderWithProviders } from 'testHelpers/providers'
 import Button from '..'
 
 describe('[Component] Button', () => {
-  it('should call a function once on click on the button', async () => {
-    const user = userEvent.setup({ delay: null })
-    const onClick = jest.fn()
+  const user = userEvent.setup({ delay: null })
 
+  it('should call a function once on click on the button', async () => {
+    const onClick = jest.fn()
     renderWithProviders(
       <Button
         onClick={onClick}
@@ -44,9 +44,7 @@ describe('[Component] Button', () => {
     renderWithProviders(
       <Button size="medium" text="Mais Informações" color="blue" />
     )
-
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-
     expect(btn).toHaveStyle({
       height: 'min-content',
       padding: '12px 24px',
@@ -58,9 +56,7 @@ describe('[Component] Button', () => {
     renderWithProviders(
       <Button disabled text="Mais Informações" color="blue" size="large" />
     )
-
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-
     expect(btn).toHaveStyle({
       cursor: 'not-allowed',
       opacity: 0.5
@@ -78,9 +74,7 @@ describe('[Component] Button', () => {
         fullWidth={true}
       />
     )
-
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-
     expect(btn).toHaveStyle({ width: '100%' })
   })
 })
