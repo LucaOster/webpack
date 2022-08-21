@@ -8,7 +8,7 @@
   "repository": "https://github.com/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate",
   "main": "./src/ui/index.js",
   "scripts": {
-    "dev": "env-cmd -f .env webpack serve --progress --config webpack/webpack.local.js",
+    "dev": "env-cmd -f .env.local webpack serve --progress --config webpack/webpack.local.js",
     "start": "env-cmd -f .env.prod webpack serve --open --config webpack/webpack.prod.js",
     "build": "env-cmd -f .env.prod webpack --config webpack/webpack.prod.js",
     "build:dev": "env-cmd -f .env.dev webpack --config webpack/webpack.dev.js",
@@ -23,7 +23,7 @@
     "build-storybook": "build-storybook",
     "generate": "yarn plop --plopfile componentGenerator/plopfile.js",
     "check-update": "yarn upgrade-interactive --latest",
-    "prepare": "husky install && chmod ug+x .husky/*",
+    "prepare": "husky install",
     "release": "semantic-release"
   },
   "husky": {
