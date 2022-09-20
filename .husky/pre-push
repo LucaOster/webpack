@@ -3,7 +3,7 @@
 
 npx --no-install
 
-yarn typecheck
 yarn test
+yarn typecheck
 yarn build
 yarn build-storybook
