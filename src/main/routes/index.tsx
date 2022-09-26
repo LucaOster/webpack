@@ -16,14 +16,9 @@ const RoutesWrapper = () => (
         <Route path="page-example-3" element={<Pages.Example4 />} />
       </Route>
 
-      <Route
-        path="*"
-        element={
-          <C.ErrorTemplate>
-            <Pages.Error />
-          </C.ErrorTemplate>
-        }
-      />
+      <Route element={<C.ErrorTemplate />}>
+        <Route path="*" element={<Pages.Error />} />
+      </Route>
     </Routes>
   </Suspense>
 )

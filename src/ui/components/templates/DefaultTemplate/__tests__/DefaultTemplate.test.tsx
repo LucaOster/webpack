@@ -3,7 +3,7 @@ import { renderWithProviders } from 'testHelpers/providers'
 import Default from '..'
 
 describe('[Template] Default', () => {
-  it('should render a children', () => {
+  it('should render a text', () => {
     renderWithProviders(<Default />)
     const title = screen.getByRole('banner')
     expect(title).toHaveTextContent('Template Default')
