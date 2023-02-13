@@ -34,13 +34,16 @@ module.exports = {
   roots: ['<rootDir>/src'],
   testRegex: '(/__tests__/.*|(\\.|/)(test))\\.tsx?$',
   moduleNameMapper: {
-    '^.+\\.svg$': '<rootDir>/src/testHelpers/mocks/svg.ts'
+    '^.+\\.svg$': '<rootDir>/src/testHelpers/mocks/svg.ts',
+    '^.+\\.css$': '<rootDir>/src/testHelpers/mocks/style.ts'
   },
   transform: {
     '^.+\\.tsx?$': [
       '@swc/jest',
       { jsc: { transform: { react: { runtime: 'automatic' } } } }
-    ]
+    ],
+    '\\.(webp|png|gif|jpg|svg)$':
+      '<rootDir>/src/testHelpers/mocks/assetsTransformer.js'
   },
   coverageThreshold: {
     global: {

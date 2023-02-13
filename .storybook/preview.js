@@ -75,7 +75,7 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <MainProviders setTheme="light">
+    <MainProviders>
       <Story />
     </MainProviders>
   )

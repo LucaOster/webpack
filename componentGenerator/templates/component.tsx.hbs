@@ -1,10 +1,8 @@
 import * as S from './styles'
 import { {{pascalCase name}}Props } from './types'
 
-const {{pascalCase name}} = ({ ...props }: {{pascalCase name}}Props) => (
-  <S.Wrapper>
+export const {{pascalCase name}} = ({ ...props }: {{pascalCase name}}Props) => (
+  <S.Wrapper {...props}>
     <h1>{{pascalCase name}}</h1>
   </S.Wrapper>
 )
-
-export default {{pascalCase name}}

@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
 import T from 'ui/theme'
-import { ColorsTheme } from './colors'
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -65,27 +64,20 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-
   ::-webkit-scrollbar,
   scrollbar-width {
-    width: 1.6rem !important;
-    background-color: #FFFFFF28;
+    width: 16px !important;
+    background-color: ${T.colors.white};
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: ${T.colors.primary};
+    background-color: ${T.colors.gray};
     border-radius: 20px;
-    border: 0.3rem solid #fff;
+    border: 3px solid ${T.colors.white};
   }
 
   :root {
-    scrollbar-color: ${T.colors.primary} ${T.colors.white} !important;
-    scrollbar-width: 1.6rem !important;
+    scrollbar-color: ${T.colors.gray} ${T.colors.white} !important;
+    scrollbar-width: 16px !important;
   }
-
-  ${ColorsTheme}
 `

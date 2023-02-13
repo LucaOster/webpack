@@ -1,24 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import {{pascalCase name}} from '..'
+import { ComponentMeta } from '@storybook/react'
+import { {{pascalCase name}} } from '..'
 
 export default {
-  title: 'TipoDoComponente/{{pascalCase name}}',
-  component: {{pascalCase name}},
-  args: {
-    text: 'Click Here'
-  },
-  argTypes: {
-    size: {
-      options: ['small', 'medium', 'large'],
-      control: { type: 'inline-radio' }
-    },
-    onClick: { action: 'onClick' }
-  },
-  parameters: {
-    controls: { sort: 'requiredFirst' }
-  }
+  title: '{{pascalCase component_level}}/{{pascalCase name}}',
+  component: {{pascalCase name}}
 } as ComponentMeta<typeof {{pascalCase name}}>
 
-const Template: ComponentStory<typeof {{pascalCase name}}> = args => <{{pascalCase name}} {...args} />
-
-export const Basic = Template.bind({})
+export const Basic = {}

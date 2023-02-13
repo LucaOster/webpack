@@ -27,11 +27,5 @@
     "incremental": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", ".jest/setup.ts"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    ".storybook",
-    "src/**/stories.tsx",
-    "src/**/*.test*"
-  ]
+  "exclude": ["node_modules", "dist", ".storybook"]
 }
