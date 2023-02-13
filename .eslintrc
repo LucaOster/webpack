@@ -57,6 +57,7 @@
   ],
   "rules": {
     "no-console": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/function-component-definition": [
       "error",
