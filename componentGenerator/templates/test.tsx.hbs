@@ -1,13 +1,11 @@
 import { screen } from '@testing-library/react'
-import { renderWithProviders } from 'tests/providers'
-import {{pascalCase name}} from '..'
+import { renderWithProviders } from 'testHelpers/providers'
+import { {{pascalCase name}} } from '..'
 
 describe('[Component] {{pascalCase name}}', () => {
   it('should render the heading', () => {
     renderWithProviders(<{{pascalCase name}} />)
-
     const wrapper = screen.getByRole('heading')
-
     expect(wrapper).toBeInTheDocument()
   })
 })
