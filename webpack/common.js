@@ -77,7 +77,6 @@ module.exports = env => ({
             jsc: {
               parser: { syntax: 'typescript', tsx: true },
               target: 'es2021',
-              minify: { compress: isProduction },
               transform: {
                 react: {
                   runtime: 'automatic',
