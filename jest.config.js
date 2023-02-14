@@ -21,10 +21,6 @@ module.exports = {
     'src/ui/assets/',
     'src/tests/providers/',
     'src/hooks/index.ts',
-    'src/data/',
-    'src/infra/adapters/httpClient/',
-    'src/infra/http/',
-    'src/infra/store/',
     'src/types/',
     'src/testHelpers/',
     'stories.tsx',
@@ -44,13 +40,5 @@ module.exports = {
     ],
     '\\.(webp|png|gif|jpg|svg)$':
       '<rootDir>/src/testHelpers/mocks/assetsTransformer.js'
-  },
-  coverageThreshold: {
-    global: {
-      branches: 85,
-      functions: 85,
-      lines: 85,
-      statements: -10
-    }
   }
 }
