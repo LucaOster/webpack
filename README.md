@@ -1,16 +1,16 @@
 <div align="center">
 
-<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)</a>
-![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=react-webpack-styled-components-redux-tlk-boilerplate&style=plastic)
-![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=yellow&style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?color=orange&style=plastic)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate?style=plastic)
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)</a>
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=react-webpack-styled-components-boilerplate&style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_boilerplate?color=yellow&style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/react_webpack_styled_components_boilerplate?color=orange&style=plastic)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)
 ![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release&style=plastic)
 
 </div>
 
-<h1 align="center">Boilerplate Complete and updated with React.js, Webpack, Typescript, Styled-Components, Tests and Redux Toolkit</h1>
+<h1 align="center">Boilerplate Complete and updated with React.js, Webpack, Typescript, Styled-Components and Tests</h1>
 
 <br />
 
@@ -20,22 +20,11 @@ This application is a boilerplate for complex and large systems, especially thos
 
 We sought to achieve 3 pillars: readability, reusability, and refactorability.
 
-For this purpose, logical hooks were used to decouple the Store Layer and the Services Layer. Thus, the UI only depends on the Hooks layer and never directly imports any state manager methods and any direct calls from the Services Layer.
-
 In the construction of the UI, the Atomic Design structure was chosen, organizing the global components into atoms, molecules, organisms and templates.
 
 In addition to being constantly updated, this project was configured in the smallest details to serve as a basis for professional projects that require standardized and easy-to-maintain code architecture and design.
 
 <br />
-
-<div align="center">
-  <img src="informations/architecture.svg" alt="Architecture">
-  
-  <br />
-  <br />
-
-  <img src="informations/design.svg" alt="Design">
-</div>
 
 ---
 
@@ -74,9 +63,7 @@ In addition to being constantly updated, this project was configured in the smal
 
 💅 Styled-Components
 
-🗂 Redux Toolkit and Redux-Persist
-
-🚩 Lints: Husky, ESlint, Stylelint, Commitlint, Lint-Staged, Prettier, EditorConfig and Typecheck
+🚩 Lints: Husky, ESlint, Commitlint, Lint-Staged, Prettier, EditorConfig and Typecheck
 
 🌸 Semantic Release
 
@@ -100,18 +87,11 @@ In addition to being constantly updated, this project was configured in the smal
 
 - [x] Accessible for mouseless navigation and screen readers;
 
-- [x] Custom hooks for:
+- [x] Custom hook for:
 
-  - [x] animation in the assembly and disassembly of components;
-  - [x] conditional rendering of components by breakpoints;
-  - [x] dark/light theme;
   - [x] set page title dynamically;
 
 - [x] Theme created with styled-components without using a provider and no need to access theme properties with arrow functions;
-
-- [x] Global state management Redux Toolkit and Slice pattern, all decoupled from the project UI;
-
-- [x] Store data persistence in localStorage;
 
 - [x] 100% coverage in tests including: components, templates, pages and hooks;
 
@@ -136,7 +116,7 @@ In addition to being constantly updated, this project was configured in the smal
 ## Clone Repository
 
 ```bash
-git clone https://github.com/everton-dgn/react_webpack_styled_components_redux_tlk_boilerplate.git
+git clone https://github.com/everton-dgn/react_webpack_styled_components_boilerplate.git
 ```
 
 ## Install Dependencies
@@ -156,7 +136,7 @@ Available in http://localhost:3000
 ## Generate Production Build
 
 ```bash
-yarn build
+yarn build:prod
 ```
 
 ## Generate Development Build
@@ -185,6 +165,12 @@ yarn test
 yarn test:w
 ```
 
+## Run Tests CI
+
+```bash
+yarn test:ci
+```
+
 ## Launch Storybook in Development Mode
 
 ```bash
@@ -206,15 +192,11 @@ yarn lint
 ```
 
 ```bash
-yarn lint:css
-```
-
-```bash
 yarn typecheck
 ```
 
 ```bash
-yarn check-format
+yarn check:format
 ```
 
 ## Format code with prettier
@@ -226,13 +208,7 @@ yarn format
 ## Check for Available Updates for Dependencies
 
 ```bash
-yarn check-update
-```
-
-## Generate Semantic Releases
-
-```bash
-yarn release
+yarn check:update
 ```
 
 <br />
@@ -247,7 +223,7 @@ yarn release
 
 - Some conventions widely used in the React ecosystem were used. For example:
 
-  - In the root of the components folder, an export index was created to facilitate the use of components with named import. In this way, to use a component just import it as an object and use it with the prefix "C", thus avoiding several unnecessary lines of imports:
+  - In the root of the components folder, an export index was created to facilitate the use of components with named import. In this way, to use a component, just import it as an object and use it with the prefix "C", thus avoiding several unnecessary lines of imports:
 
     ```jsx
     import * as C from 'ui/components'
@@ -271,7 +247,7 @@ yarn release
     ...
     ```
 
-- To create a complete component folder with tests, storybook, index and styles files, just use the command in the terminal: `yarn generate ComponentName`
+- To create a complete component folder with tests, storybook, index and styles files, just use the command in the terminal: `yarn generate`
 
 ---
 
