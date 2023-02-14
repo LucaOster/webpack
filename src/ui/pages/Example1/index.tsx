@@ -9,7 +9,7 @@ const Example1 = () => {
 
   return (
     <S.Container role="main">
-      <C.TitleSection title="Page Example 1" />
+      <h1>Page Example 1</h1>
 
       <S.Column>
         <C.Button

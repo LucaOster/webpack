@@ -52,7 +52,7 @@ const ColorsBtn = {
 export const Container = styled.button<BtnProps>`
   ${({ fullWidth, color, size }) => css`
     cursor: pointer;
-    border-radius: ${T.border.radius};
+    border-radius: ${T.borders.radius};
     font-weight: 400;
     display: inline-flex;
     align-items: center;

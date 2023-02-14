@@ -1,23 +1,12 @@
+import { borders } from 'ui/theme/borders'
+import { grids } from 'ui/theme/grids'
+import { layers } from 'ui/theme/layers'
 import { animations } from './animations'
 import { breakpoints } from './breakpoints'
 import { colors } from './colors'
 import { spacings } from './spacings'
 import { fonts } from './typographies'
 import { windowSizes } from './windowSizes'
-
-const grid = {
-  container: '130rem',
-  gutter: '24px'
-}
-
-const border = {
-  radius: '4px',
-  circle: '50%'
-}
-
-const layers = {
-  base: 10
-}
 
 const T = {
   colors,
@@ -26,8 +15,8 @@ const T = {
   animations,
   breakpoints,
   windowSizes,
-  grid,
-  border,
+  grids,
+  borders,
   layers
 } as const
 

@@ -22,7 +22,7 @@ export const BtnGroup = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 35rem;
-  gap: ${T.grid.gutter};
+  gap: ${T.grids.gutter};
   margin-top: ${T.spacings.xtreme};
   padding: 0 ${T.spacings.large};
 

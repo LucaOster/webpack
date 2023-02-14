@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from 'testHelpers/providers'
-import Button from '..'
+import { Button } from '..'
 
 describe('[Component] Button', () => {
   const user = userEvent.setup({ delay: null })

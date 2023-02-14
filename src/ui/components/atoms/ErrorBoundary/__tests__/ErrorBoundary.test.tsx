@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 import { renderWithProviders } from 'testHelpers/providers'
-import ErrorBoundary from '..'
+import { ErrorBoundary } from '..'
 
 const ChildWithError = () => {
   throw new Error()

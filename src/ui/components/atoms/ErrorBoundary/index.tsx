@@ -1,10 +1,7 @@
 import { Component } from 'react'
 import { ConstructorProps, ErrorBoundaryProps, StateProps } from './types'
 
-export default class ErrorBoundary extends Component<
-  ErrorBoundaryProps,
-  StateProps
-> {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, StateProps> {
   state: { hasError: boolean }
 
   constructor(props: ConstructorProps) {

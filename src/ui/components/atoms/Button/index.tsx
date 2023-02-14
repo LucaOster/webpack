@@ -1,8 +1,8 @@
-import { forwardRef, memo } from 'react'
+import { forwardRef } from 'react'
 import * as S from './styles'
 import { BtnProps } from './types'
 
-const Button = forwardRef<HTMLButtonElement, BtnProps>(
+export const Button = forwardRef<HTMLButtonElement, BtnProps>(
   ({ icon, text, ...props }, ref) => (
     <S.Container {...props} ref={ref}>
       {icon}
@@ -10,5 +10,3 @@ const Button = forwardRef<HTMLButtonElement, BtnProps>(
     </S.Container>
   )
 )
-
-export default memo(Button)

@@ -47,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
   button {
     cursor: pointer;
     border: none;
-    border-radius: ${T.border.radius};
+    border-radius: ${T.borders.radius};
   }
 
   #root {
