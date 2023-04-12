@@ -3,12 +3,6 @@
     "enabled": false,
     "silent": true
   },
-  "rewrites": [
-    {
-      "source": "/((?!api/.*).*)",
-      "destination": "/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

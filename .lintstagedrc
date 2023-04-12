@@ -2,6 +2,6 @@
   "src/**/*.{ts,tsx}": [
     "yarn lint:fix",
     "yarn format",
-    "yarn test:ci --findRelatedTests --passWithNoTests"
+    "yarn test:ci --findRelatedTests"
   ]
 }

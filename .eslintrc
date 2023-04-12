@@ -1,7 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
+    "es2022": true,
     "node": true,
     "jest": true
   },
@@ -56,6 +56,7 @@
     "jsx-a11y"
   ],
   "rules": {
+    "@typescript-eslint/no-var-requires": "off",
     "no-console": "error",
     "@typescript-eslint/ban-ts-comment": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],

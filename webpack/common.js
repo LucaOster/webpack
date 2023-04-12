@@ -1,17 +1,15 @@
-/* eslint @typescript-eslint/no-var-requires: "off" */
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { DefinePlugin, EnvironmentPlugin } = require('webpack')
 
 const isDevelopment = process.env.ENVIRONMENT === 'DEV'
-const isProduction = process.env.ENVIRONMENT === 'PRD'
 
 const styledComponentsOptions = {
-  displayName: true,
+  displayName: isDevelopment,
   fileName: false,
   namespace: process.env.NAME_APPLICATTION,
-  sourceMap: true,
+  sourceMap: isDevelopment,
   pure: true
 }
 
@@ -19,10 +17,11 @@ module.exports = env => ({
   mode: env.mode,
   entry: './src/main/index',
   devtool: 'source-map',
+  cache: { type: 'filesystem' },
   output: {
     clean: true,
     publicPath: env.publicPath,
-    chunkFilename: '[id].[contenthash].js'
+    chunkFilename: isDevelopment ? '[name].js' : '[id].[contenthash:8].js'
   },
   optimization: {
     chunkIds: 'named',
@@ -107,7 +106,18 @@ module.exports = env => ({
     new HtmlWebpackPlugin({
       template: './public/index.html',
       favicon: './public/favicon.png',
-      minify: isProduction,
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true
+      },
       cache: true
     }),
     ...(isDevelopment ? [new ReactRefreshWebpackPlugin()] : [])
