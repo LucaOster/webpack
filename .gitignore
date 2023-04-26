@@ -18,13 +18,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 
 
 # local env files
-.env.development
-.env.production
-.env*.local
 
 # vercel
 .vercel
@@ -43,4 +39,5 @@ yarn.lock
 /src/stories
 
 # typescript incremental features
-/.tsBuildInfoFile/
+/.tsBuildInfo
+.eslintcache

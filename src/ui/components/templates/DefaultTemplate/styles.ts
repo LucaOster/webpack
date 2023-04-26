@@ -8,8 +8,17 @@ export const Grid = styled.div`
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  padding: ${T.spacings.sm};
 `
 
 export const Header = styled.header`
-  font-size: ${T.fonts.sizes.xLarge};
+  font-size: ${T.fonts.sizes.xxxl};
+  font-weight: ${T.fonts.weights.semiBold};
+  margin-bottom: ${T.spacings.xxl};
+`
+
+export const ContainerPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `

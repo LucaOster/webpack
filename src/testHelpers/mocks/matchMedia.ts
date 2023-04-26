@@ -1,19 +1,21 @@
-export const size = (size: number) => {
+const size = (size: number) => {
   window.matchMedia = jest.fn().mockImplementation(query => ({
+    addEventListener: jest.fn(),
+    addListener: jest.fn(),
+    dispatchEvent: jest.fn(),
     matches: query === `(min-width: ${size}px)`,
     media: '',
     onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn()
+    removeEventListener: jest.fn(),
+    removeListener: jest.fn()
   }))
 }
 
 const object = {
-  writable: true,
-  value: jest.fn().mockImplementation(() => ({}))
+  value: jest.fn().mockImplementation(() => ({})),
+  writable: true
 }
 
 Object.defineProperty(window, 'matchMedia', object)
+
+export default size

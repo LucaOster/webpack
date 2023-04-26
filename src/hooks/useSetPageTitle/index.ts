@@ -1,11 +1,10 @@
 import { useLayoutEffect } from 'react'
 import { UseSetPageTitleProps } from './types'
 
-export const useSetPageTitle = ({ pageTitle }: UseSetPageTitleProps): void => {
-  useLayoutEffect(
-    function setPageTitle() {
-      document.title = pageTitle
-    },
-    [pageTitle]
-  )
+const useSetPageTitle = ({ pageTitle }: UseSetPageTitleProps): void => {
+  useLayoutEffect(() => {
+    document.title = pageTitle
+  }, [pageTitle])
 }
+
+export default useSetPageTitle

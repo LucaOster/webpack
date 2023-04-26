@@ -1,2 +1,7 @@
-export * from './matchMedia'
-export * from './reactRouterDom'
+export { default as size } from './matchMedia'
+export {
+  mockedUseLocation,
+  mockedUseNavigate,
+  mockedUseParams,
+  mockedUseRoutes
+} from './reactRouterDom'

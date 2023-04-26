@@ -1,11 +1,16 @@
-export const spacings = {
-  xxSmall: '4px',
-  xSmall: '8px',
-  small: '12px',
-  medium: '16px',
-  large: '20px',
-  xLarge: '24px',
-  xxLarge: '28px',
-  xxxLarge: '32px',
-  xtreme: '40px'
+const spacings = {
+  giga: '96px',
+  lg: '32px',
+  macro: '48px',
+  md: '24px',
+  mega: '60px',
+  micro: '8px',
+  nano: '4px',
+  sm: '20px',
+  xl: '36px',
+  xs: '16px',
+  xxl: '40px',
+  xxs: '12px'
 }
+
+export default spacings
