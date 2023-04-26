@@ -6,6 +6,6 @@ describe('[Template] Default', () => {
   it('should render a text', () => {
     renderWithProviders(<Default />)
     const title = screen.getByRole('banner')
-    expect(title).toHaveTextContent('Template Default')
+    expect(title).toHaveTextContent('Boilerplate')
   })
 })

@@ -1,5 +1,4 @@
 src/ui/assets/*
-.jest
 .storybook
 dist
 yarn.lock
@@ -10,3 +9,4 @@ componentGenerator
 coverage
 storybook-static
 .tsBuildInfoFile
+webpack.config.js

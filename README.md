@@ -1,11 +1,11 @@
 <div align="center">
 
-<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)</a>
+<a href="./LICENSE">![GitHub](https://img.shields.io/github/license/everton-dgn/boilerplate_webpack?style=plastic)</a>
 ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=react-webpack-styled-components-boilerplate&style=plastic)
-![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/react_webpack_styled_components_boilerplate?color=yellow&style=plastic)
-![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/react_webpack_styled_components_boilerplate?color=orange&style=plastic)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/everton-dgn/react_webpack_styled_components_boilerplate?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/everton-dgn/boilerplate_webpack?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/everton-dgn/boilerplate_webpack?color=yellow&style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/v/release/everton-dgn/boilerplate_webpack?color=orange&style=plastic)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/everton-dgn/boilerplate_webpack?style=plastic)
 ![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release&style=plastic)
 
 </div>
@@ -116,7 +116,7 @@ In addition to being constantly updated, this project was configured in the smal
 ## Clone Repository
 
 ```bash
-git clone https://github.com/everton-dgn/react_webpack_styled_components_boilerplate.git
+git clone https://github.com/everton-dgn/boilerplate_webpack.git
 ```
 
 ## Install Dependencies
@@ -145,13 +145,7 @@ yarn build:prod
 yarn build:dev
 ```
 
-## Start Production Environment
-
-```bash
-yarn start
-```
-
-Available in http://localhost:3001
+Available in http://localhost:3000
 
 ## Run Tests
 

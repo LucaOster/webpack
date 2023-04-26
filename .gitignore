@@ -18,7 +18,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
 
 
 # local env files
@@ -40,4 +39,5 @@ yarn.lock
 /src/stories
 
 # typescript incremental features
-/.tsBuildInfoFile/
+/.tsBuildInfo
+.eslintcache
