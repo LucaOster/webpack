@@ -3,11 +3,15 @@ import { renderWithProviders } from 'testHelpers/providers'
 import Error from '..'
 
 describe('[Page] Error', () => {
-  it('should the following section title: Page not found!', () => {
+  it('should render a heading and a title', () => {
     renderWithProviders(<Error />)
-    const titleSection = screen.getByRole('heading', {
+
+    const heading = screen.getByRole('banner')
+    const title = screen.getByRole('heading', {
       name: 'Page not found!'
     })
-    expect(titleSection).toBeInTheDocument()
+
+    expect(heading).toHaveTextContent('Error!')
+    expect(title).toBeInTheDocument()
   })
 })

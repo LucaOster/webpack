@@ -1,26 +1,21 @@
 module.exports = {
   testEnvironment: 'jest-environment-jsdom',
-  collectCoverage: true,
+  passWithNoTests: true,
   fakeTimers: {
     enableGlobally: true
   },
-  testPathIgnorePatterns: ['/node_modules'],
+  testPathIgnorePatterns: ['/node_modules', '/.dist'],
   moduleDirectories: ['node_modules', '<rootDir>/'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
+  globalSetup: '<rootDir>/.jest/timezoneMock.ts',
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
-    'src/main/',
-    'src/ui/app.tsx',
-    'src/ui/pages/index.tsx',
-    'src/ui/components/index.tsx',
-    'src/ui/components/templates/index.tsx',
     'src/ui/theme/',
     'src/ui/globalStyles/',
     'src/ui/providers/',
     'src/ui/assets/',
     'src/tests/providers/',
-    'src/hooks/index.ts',
     'src/types/',
     'src/testHelpers/',
     'stories.tsx',
@@ -36,9 +31,9 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': [
       '@swc/jest',
-      { jsc: { transform: { react: { runtime: 'automatic' } } } }
+      {jsc: {transform: {react: {runtime: 'automatic'}}}}
     ],
-    '\\.(webp|png|gif|jpg|svg)$':
+    '\\.(webp|png|gif|svg|jpg)$':
       '<rootDir>/src/testHelpers/mocks/assetsTransformer.js'
   }
 }

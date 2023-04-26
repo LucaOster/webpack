@@ -1,1 +1,1 @@
-export * from './useSetPageTitle'
+export { default as useSetPageTitle } from './useSetPageTitle'

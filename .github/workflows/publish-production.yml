@@ -9,24 +9,83 @@ on:
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  HUSKY: 0
 
 jobs:
-  test:
+  install_dependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-global
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v3-${{ hashFiles('yarn.lock') }}
+
       - name: install_dependencies
+        if: steps.cache-global.outputs.cache-hit != 'true'
         run: yarn install
+
+  typecheck:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-global
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v3-${{ hashFiles('yarn.lock') }}
+
       - name: run_typescript_check
         run: 'yarn typecheck'
+
+  test_ci:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-global
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v3-${{ hashFiles('yarn.lock') }}
+
       - name: run_tests
-        run: 'yarn test'
+        run: 'yarn test:ci'
+
+  build:
+    needs: [install_dependencies]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        id: cache-global
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v3-${{ hashFiles('yarn.lock') }}
+
+      - name: run_tests
+        run: 'yarn build'
 
   deploy:
-    needs: [test]
+    needs: [typecheck, test_ci, build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -53,16 +112,17 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
-      - name: install_dependencies
-        run: yarn install
-      - name: install_semantic_release_dependencies
-        run: yarn add -D semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/changelog @semantic-release/git @semantic-release/github @semantic-release/npm conventional-changelog-conventionalcommits
+      - name: Cache NPM dependencies
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-v3-${{ hashFiles('yarn.lock')
 
       - name: generate_release
         env:
           GITHUB_TOKEN: ${{ secrets.CUSTOM_RELEASE_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: HUSKY=0 npx semantic-release
+        run: npx semantic-release
 
       - name: 'create_tag'
         uses: Actions-R-Us/actions-tagger@v2

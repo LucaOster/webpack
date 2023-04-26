@@ -1,1 +1,1 @@
-export * from './mainProviders'
+export { default as MainProvider } from './mainProvider'

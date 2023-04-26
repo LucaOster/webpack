@@ -15,7 +15,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "tsconfig.json"
+        "project": "./tsconfig.json"
       }
     }
   },
@@ -23,11 +23,13 @@
     "standard",
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:promise/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "plugin:import/typescript",
+    "plugin:typescript-sort-keys/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
@@ -48,6 +50,8 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
+    "sort-keys-fix",
+    "typescript-sort-keys",
     "promise",
     "prettier",
     "jest-dom",
@@ -56,9 +60,29 @@
     "jsx-a11y"
   ],
   "rules": {
+    "react/jsx-sort-props": "warn",
+    "object-shorthand": "warn",
+    "sort-keys-fix/sort-keys-fix": "warn",
+    "typescript-sort-keys/string-enum": [
+      "warn",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false
+      }
+    ],
+    "typescript-sort-keys/interface": [
+      "warn",
+      "asc",
+      {
+        "caseSensitive": true,
+        "natural": false,
+        "requiredFirst": true
+      }
+    ],
     "@typescript-eslint/no-var-requires": "off",
-    "no-console": "error",
     "@typescript-eslint/ban-ts-comment": "off",
+    "no-console": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/function-component-definition": [
       "error",
@@ -77,7 +101,7 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint-in-jsx-scope": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-assertion": "warn",
     "space-before-function-paren": "off",
     "eslint-disable-next-line": "off",
     "react/display-name": "off",
@@ -92,14 +116,13 @@
       "extends": ["plugin:storybook/recommended"]
     },
     {
-      "files": ["**/__tests__/**/*.tsx?", "**/?(*.)+(spec|test).tsx?"],
+      "files": ["**/__tests__/**/*.tsx", "**/?(*.)+(spec|test).tsx"],
       "plugins": ["jest-dom", "testing-library", "jest"],
       "extends": [
-        "plugin:jest-dom/recommended",
         "plugin:testing-library/react",
+        "plugin:jest-dom/recommended",
         "plugin:jest/recommended",
-        "plugin:jest/style"
-      ]
+        "plugin:jest/style"]
     }
   ]
 }
