@@ -122,7 +122,8 @@
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended",
         "plugin:jest/recommended",
-        "plugin:jest/style"]
+        "plugin:jest/style"
+      ]
     }
   ]
 }

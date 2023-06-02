@@ -1,2 +1,2 @@
-export { default as renderWithProviders } from './components'
+export { default as renderWithProviders, event } from './components'
 export { default as renderHooksProvider } from './hooks'

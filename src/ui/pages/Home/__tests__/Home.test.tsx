@@ -1,11 +1,8 @@
-import { screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { renderWithProviders } from 'testHelpers/providers'
+import { screen, act } from '@testing-library/react'
+import { renderWithProviders, event } from 'testHelpers/providers'
 import Home from '..'
 
 describe('[Page] Home', () => {
-  const user = userEvent.setup({ delay: null })
-
   it('should render a page with a title, two images and a button', () => {
     renderWithProviders(<Home />)
 
@@ -34,14 +31,14 @@ describe('[Page] Home', () => {
     const countButton0 = screen.getByRole('button', {
       name: 'COUNT: 0'
     })
-    await user.click(countButton0)
+    await act(() => event.click(countButton0))
     const countButton1 = screen.getByRole('button', {
       name: 'COUNT: 1'
     })
 
     expect(countButton1).toBeInTheDocument()
 
-    await user.click(countButton1)
+    await act(() => event.click(countButton1))
     const countButton2 = screen.getByRole('button', {
       name: 'COUNT: 2'
     })

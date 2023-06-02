@@ -31,7 +31,7 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': [
       '@swc/jest',
-      {jsc: {transform: {react: {runtime: 'automatic'}}}}
+      { jsc: { transform: { react: { runtime: 'automatic' } } } }
     ],
     '\\.(webp|png|gif|svg|jpg)$':
       '<rootDir>/src/testHelpers/mocks/assetsTransformer.js'
