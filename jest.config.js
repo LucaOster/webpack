@@ -16,7 +16,7 @@ module.exports = {
     'src/ui/providers/',
     'src/ui/assets/',
     'src/tests/providers/',
-    'src/types/',
+    'src/@types/',
     'src/testHelpers/',
     'stories.tsx',
     'types.ts'
