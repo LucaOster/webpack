@@ -9,7 +9,7 @@ const colors = {
   overlay: '#000000b3',
   primary: '#046a81',
   secondary: '#041627',
-  tertiary: '#0493b4',
+  tertiary: '#00728c',
   tertiaryHover: '#05b5c5',
   white: '#fff'
 }
