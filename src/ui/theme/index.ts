@@ -8,7 +8,6 @@ import colors from './colors'
 import spacings from './spacings'
 import fonts from './fonts'
 import windowSizes from './windowSizes'
-import states from './states'
 
 const T = {
   animations,
@@ -19,7 +18,6 @@ const T = {
   fonts,
   grids,
   spacings,
-  states,
   windowSizes,
   zIndex
 } as const

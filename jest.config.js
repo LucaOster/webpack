@@ -11,6 +11,8 @@ module.exports = {
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
   coveragePathIgnorePatterns: [
+    'src/ui/index.tsx',
+    'src/ui/routes/index.tsx',
     'src/ui/theme/',
     'src/ui/globalStyles/',
     'src/ui/providers/',

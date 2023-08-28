@@ -1,19 +1,22 @@
+import { lazy } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import * as Pages from 'ui/pages'
-import * as C from 'ui/components'
+import Home from 'ui/pages/Home'
+import DefaultTemplate from 'ui/components/templates/DefaultTemplate'
+
+const Error = lazy(() => import('ui/pages/Error'))
 
 const router = createBrowserRouter([
   {
     children: [
       {
-        element: <Pages.Home />,
+        element: <Home />,
         path: '/'
       }
     ],
-    element: <C.DefaultTemplate />
+    element: <DefaultTemplate />
   },
   {
-    element: <Pages.Error />,
+    element: <Error />,
     path: '*'
   }
 ])

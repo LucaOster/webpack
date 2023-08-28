@@ -19,8 +19,4 @@ export const Container = styled.button`
   &:hover {
     background-color: ${T.colors.tertiaryHover};
   }
-
-  &:focus {
-    ${T.states.focus};
-  }
 `

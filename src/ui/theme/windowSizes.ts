@@ -1,7 +1,6 @@
 const windowSizes = {
-  lg: 1024,
-  md: 600,
-  sm: 0
+  desktop: 1024,
+  tablet: 600
 }
 
 export default windowSizes

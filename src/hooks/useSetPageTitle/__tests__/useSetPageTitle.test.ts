@@ -1,4 +1,4 @@
-import { renderHooksProvider } from 'testHelpers/providers'
+import renderHooksProvider from 'testHelpers/providers/hooks'
 import useSetPageTitle from '..'
 
 describe('[Hooks] useSetPageTitle', () => {

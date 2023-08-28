@@ -1,4 +1,4 @@
-import { useSetPageTitle } from 'hooks'
+import useSetPageTitle from 'hooks/useSetPageTitle'
 import * as S from './styles'
 
 const Error = () => {
