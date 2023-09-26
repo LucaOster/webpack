@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 
 export const mockedUseNavigate = jest.fn()
 export const mockedUseParams = jest.fn()
