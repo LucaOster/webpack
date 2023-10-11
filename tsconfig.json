@@ -16,6 +16,7 @@
     "isolatedModules": true,
     "jsxImportSource": "react",
     "removeComments": true,
+    "moduleDetection": "force",
     "sourceMap": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
