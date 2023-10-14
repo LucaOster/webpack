@@ -9,7 +9,7 @@ describe('[Component] Button', () => {
     renderWithProviders(<Button onClick={onClick} text="Mais Informações" />)
 
     const btn = screen.getByRole('button', { name: /Mais Informações/i })
-    await event.click(btn)
+    await event().click(btn)
 
     expect(onClick).toHaveBeenCalledTimes(1)
   })

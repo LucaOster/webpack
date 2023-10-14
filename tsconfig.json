@@ -16,16 +16,21 @@
     "isolatedModules": true,
     "jsxImportSource": "react",
     "removeComments": true,
-    "moduleDetection": "force",
     "sourceMap": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
+    "moduleDetection": "force",
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noUncheckedIndexedAccess": true,
+    "verbatimModuleSyntax": true,
     "declaration": true,
     "skipLibCheck": true,
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", ".jest/setup.ts"],
   "exclude": ["dist", "node_modules"]
 }

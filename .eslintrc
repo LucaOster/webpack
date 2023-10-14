@@ -23,8 +23,6 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
-    "sort-keys-fix",
-    "typescript-sort-keys",
     "promise",
     "prettier",
     "jest-dom",
@@ -42,7 +40,6 @@
     "plugin:jsx-a11y/recommended",
     "plugin:import/errors",
     "plugin:import/typescript",
-    "plugin:typescript-sort-keys/recommended",
     "prettier",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
@@ -72,24 +69,6 @@
     ],
     "react/jsx-sort-props": "warn",
     "object-shorthand": "warn",
-    "sort-keys-fix/sort-keys-fix": "warn",
-    "typescript-sort-keys/string-enum": [
-      "warn",
-      "asc",
-      {
-        "caseSensitive": true,
-        "natural": false
-      }
-    ],
-    "typescript-sort-keys/interface": [
-      "warn",
-      "asc",
-      {
-        "caseSensitive": true,
-        "natural": false,
-        "requiredFirst": true
-      }
-    ],
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "no-console": "error",
